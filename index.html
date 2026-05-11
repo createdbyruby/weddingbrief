@@ -3,1030 +3,748 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wedding Content Creator Brief</title>
-
+<title>Ruby - Wedding Content Brief</title>
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blush:#B8939A;--blush-light:#E2D3D6;--blush-xlight:#F8F3F4;
+  --ink:#252220;--ink-soft:#524D4A;--ink-muted:#9A9390;
+  --cream:#FAF9F8;--white:#FFFFFF;
+  --border:rgba(180,148,154,0.22);--border-light:rgba(180,148,154,0.12);
+}
+body{font-family:-apple-system,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;color:var(--ink);background:var(--cream);min-height:100vh}
 
-  :root {
-    --cream: #FAF9F8;
-    --warm-white: #FFFFFF;
-    --ink: #252220;
-    --ink-soft: #524D4A;
-    --ink-muted: #9A9390;
-    --gold: #B8939A;
-    --gold-light: #E2D3D6;
-    --gold-xlight: #F8F3F4;
-    --border: rgba(180,148,154,0.2);
-    --border-light: rgba(180,148,154,0.1);
-    --section-bg: rgba(255,255,255,0.8);
-  }
+/* NAV */
+.top-nav{background:var(--white);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 32px;position:sticky;top:0;z-index:100}
+.nav-tabs{display:flex}
+.nav-tab{padding:16px 20px;font-size:13px;font-weight:500;color:var(--ink-muted);background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;transition:all 0.15s;margin-bottom:-1px;letter-spacing:0.01em}
+.nav-tab.active{color:var(--blush);border-bottom-color:var(--blush)}
+.nav-tab:hover:not(.active){color:var(--ink)}
+.nav-brand{font-family:Didot,'Bodoni MT',Georgia,serif;font-size:15px;font-style:italic;color:var(--blush);letter-spacing:0.02em}
+.resp-badge{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:var(--blush);color:white;font-size:10px;font-weight:500;margin-left:6px;vertical-align:middle}
 
-  body {
-    font-family: -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background: var(--cream);
-    color: var(--ink);
-    font-size: 14px;
-    line-height: 1.6;
-    min-height: 100vh;
-  }
+/* VIEWS */
+.view{display:none}.view.active{display:block}
+.page{max-width:760px;margin:0 auto;padding:36px 24px 64px}
 
-  .page {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 48px 40px;
-  }
+/* HEADER */
+.brief-header{text-align:center;padding:32px 40px;background:var(--white);border:1px solid var(--border);border-radius:4px;margin-bottom:24px;position:relative}
+.brief-header::before{content:'';position:absolute;inset:5px;border:1px solid var(--border-light);border-radius:3px;pointer-events:none}
+.eyebrow{font-size:9px;font-weight:500;letter-spacing:0.24em;text-transform:uppercase;color:var(--blush);margin-bottom:12px}
+.brief-header h1{font-family:Didot,'Bodoni MT',Georgia,serif;font-size:36px;font-weight:400;color:var(--ink);line-height:1.15;margin-bottom:4px}
+.brief-header h1 em{font-style:italic;color:var(--blush)}
+.ornament{display:flex;align-items:center;justify-content:center;gap:8px;margin:12px 0}
+.orn-line{height:1px;width:52px;background:var(--border)}
+.orn-diamond{width:5px;height:5px;background:var(--blush);transform:rotate(45deg);flex-shrink:0}
+.orn-dot{width:3px;height:3px;background:var(--blush-light);border-radius:50%;flex-shrink:0}
+.brief-header p{font-size:12px;color:var(--ink-muted);letter-spacing:0.02em}
 
-  /* HEADER */
-  .header {
-    text-align: center;
-    padding: 36px 40px 36px;
-    margin-bottom: 40px;
-    border: 1px solid var(--border);
-    border-radius: 2px;
-    position: relative;
-  }
-  .header::before {
-    content: '';
-    position: absolute;
-    inset: 5px;
-    border: 1px solid var(--border-light);
-    border-radius: 1px;
-    pointer-events: none;
-  }
-  .header-eyebrow {
-    font-family: -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 9px;
-    font-weight: 500;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 16px;
-  }
-  .header h1 {
-    font-family: Didot, 'Bodoni MT', 'Playfair Display', 'Book Antiqua', Georgia, serif;
-    font-weight: 300;
-    font-size: 44px;
-    color: var(--ink);
-    line-height: 1.15;
-    margin-bottom: 4px;
-  }
-  .header h1 em {
-    font-style: italic;
-    color: var(--gold);
-  }
-  .header-ornament {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin: 14px 0;
-  }
-  .header-ornament-line {
-    height: 1px;
-    width: 56px;
-    background: var(--border);
-  }
-  .header-ornament-diamond {
-    width: 5px;
-    height: 5px;
-    background: var(--gold);
-    transform: rotate(45deg);
-    flex-shrink: 0;
-  }
-  .header-ornament-dot {
-    width: 3px;
-    height: 3px;
-    background: var(--gold-light);
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-  .header-sub {
-    font-size: 12px;
-    color: var(--ink-muted);
-    max-width: 420px;
-    margin: 0 auto;
-    letter-spacing: 0.03em;
-  }
+/* INTRO NOTE */
+.intro-note{background:var(--blush-xlight);border-left:2px solid var(--blush);padding:15px 20px;border-radius:0 4px 4px 0;margin-bottom:24px;font-size:13px;color:var(--ink-soft);line-height:1.75}
+.intro-note strong{color:var(--ink);font-weight:500}
 
-  /* INTRO NOTE */
-  .intro-note {
-    background: var(--gold-xlight);
-    border-left: 2px solid var(--gold);
-    padding: 16px 22px;
-    border-radius: 0 3px 3px 0;
-    margin-bottom: 44px;
-    font-size: 13px;
-    color: var(--ink-soft);
-    line-height: 1.75;
-  }
-  .intro-note strong {
-    color: var(--ink);
-    font-weight: 500;
-  }
+/* SECTIONS */
+.section{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:22px 24px;margin-bottom:16px}
+.section-hdr{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border-light)}
+.sec-num{width:25px;height:25px;border-radius:50%;border:1px solid var(--blush);color:var(--blush);font-size:10px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sec-title{font-family:Didot,'Bodoni MT',Georgia,serif;font-size:20px;font-weight:400;color:var(--ink)}
 
-  /* SECTIONS */
-  .section {
-    margin-bottom: 44px;
-    break-inside: avoid;
-  }
-  .section-header {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 20px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--border-light);
-  }
-  .section-num {
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    border: 1px solid var(--gold);
-    background: transparent;
-    color: var(--gold);
-    font-size: 10px;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    letter-spacing: 0.02em;
-  }
-  .section-title {
-    font-family: Didot, 'Bodoni MT', 'Playfair Display', 'Book Antiqua', Georgia, serif;
-    font-size: 22px;
-    font-weight: 400;
-    color: var(--ink);
-    letter-spacing: 0.01em;
-  }
+/* GRID */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid.one{grid-template-columns:1fr}
+.span2{grid-column:span 2}
 
-  /* FIELDS */
-  .fields-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-  .fields-grid.single { grid-template-columns: 1fr; }
-  .fields-grid.triple { grid-template-columns: 1fr 1fr 1fr; }
+/* FIELDS */
+.field{display:flex;flex-direction:column;gap:5px}
+.field label,.field-label{font-size:9px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--blush)}
+.field input[type=text],.field input[type=date]{font-family:inherit;font-size:13px;color:var(--ink);background:transparent;border:none;border-bottom:1px solid var(--border);padding:7px 0;outline:none;transition:border-color 0.15s;width:100%}
+.field input:focus{border-bottom-color:var(--blush)}
+.field textarea{font-family:inherit;font-size:13px;color:var(--ink);background:var(--cream);border:1px solid var(--border);border-radius:4px;padding:10px 12px;outline:none;resize:vertical;min-height:72px;width:100%;line-height:1.6;transition:border-color 0.15s}
+.field textarea:focus{border-color:var(--blush)}
+input::placeholder,textarea::placeholder{color:var(--ink-muted);font-style:italic;font-size:12px}
 
-  .field {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-  .field.span-2 { grid-column: span 2; }
-  .field.span-3 { grid-column: span 3; }
+/* SUB LABELS */
+.sub-label{font-family:Didot,'Bodoni MT',Georgia,serif;font-size:14px;color:var(--ink-soft);margin:16px 0 12px;display:flex;align-items:center;gap:10px;letter-spacing:0.02em}
+.sub-label::after{content:'';flex:1;height:1px;background:var(--border-light)}
+.sub-divider{height:1px;background:var(--border-light);margin:20px 0}
 
-  .field label {
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--gold);
-  }
-  .field-line {
-    border: none;
-    border-bottom: 1px solid var(--border);
-    background: transparent;
-    padding: 6px 0;
-    font-family: -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 13px;
-    color: var(--ink);
-    width: 100%;
-    outline: none;
-    transition: border-color 0.2s;
-  }
-  .field-line:focus { border-bottom-color: var(--gold); }
-  .field-line::placeholder { color: var(--ink-muted); font-style: italic; font-size: 12px; }
+/* CHECKBOXES */
+.check-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:8px}
+.check-grid.two{grid-template-columns:1fr 1fr}
+.check-item{display:flex;align-items:center;gap:8px;cursor:pointer;font-size:12px;color:var(--ink-soft);padding:7px 10px;border:1px solid var(--border-light);border-radius:4px;background:var(--cream);transition:all 0.15s;user-select:none;line-height:1.3}
+.check-item:hover{border-color:var(--blush-light)}
+.check-item.on{border-color:var(--blush-light);background:var(--blush-xlight);color:var(--ink)}
+.cb{width:14px;height:14px;border:1px solid var(--border);border-radius:3px;flex-shrink:0;background:var(--white);display:flex;align-items:center;justify-content:center;transition:all 0.15s}
+.check-item.on .cb{background:var(--blush);border-color:var(--blush)}
+.check-item.on .cb::after{content:'';display:block;width:7px;height:4px;border-left:1.5px solid white;border-bottom:1.5px solid white;transform:rotate(-45deg) translateY(-1px)}
 
-  .field-area {
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    background: var(--warm-white);
-    padding: 10px 12px;
-    font-family: -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 13px;
-    color: var(--ink);
-    width: 100%;
-    outline: none;
-    resize: vertical;
-    min-height: 70px;
-    transition: border-color 0.2s;
-    line-height: 1.6;
-  }
-  .field-area:focus { border-color: var(--gold); }
-  .field-area::placeholder { color: var(--ink-muted); font-style: italic; font-size: 12px; }
+/* RADIO PILLS */
+.pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.pill{cursor:pointer;font-size:12px;color:var(--ink-soft);padding:5px 14px;border:1px solid var(--border);border-radius:20px;background:var(--white);transition:all 0.15s;user-select:none}
+.pill:hover{border-color:var(--blush-light)}
+.pill.on{background:var(--blush);border-color:var(--blush);color:white;font-weight:500}
 
-  /* CHECKBOX GROUPS */
-  .check-group {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    margin-top: 4px;
-  }
-  .check-group.three { grid-template-columns: 1fr 1fr 1fr; }
-  .check-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
-    font-size: 13px;
-    color: var(--ink-soft);
-    padding: 6px 10px;
-    border: 1px solid var(--border-light);
-    border-radius: 4px;
-    background: var(--warm-white);
-    transition: all 0.15s;
-    user-select: none;
-  }
-  .check-item:hover { border-color: var(--gold-light); }
-  .check-item input { display: none; }
-  .check-box {
-    width: 14px;
-    height: 14px;
-    border: 1px solid var(--border);
-    border-radius: 3px;
-    flex-shrink: 0;
-    background: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.15s;
-  }
-  .check-item.checked .check-box {
-    background: var(--gold);
-    border-color: var(--gold);
-  }
-  .check-item.checked .check-box::after {
-    content: '';
-    display: block;
-    width: 8px;
-    height: 5px;
-    border-left: 1.5px solid white;
-    border-bottom: 1.5px solid white;
-    transform: rotate(-45deg) translateY(-1px);
-  }
-  .check-item.checked { border-color: var(--gold-light); background: var(--gold-xlight); }
+/* CREATOR NOTE */
+.creator-note{background:var(--blush-xlight);border-left:2px solid var(--blush);padding:12px 16px;font-size:12px;color:var(--ink-soft);line-height:1.65;margin-bottom:16px;border-radius:0 4px 4px 0}
+.creator-note strong{font-size:9px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--blush);display:block;margin-bottom:3px}
 
-  /* RADIO GROUPS */
-  .radio-group {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-top: 4px;
-  }
-  .radio-item {
-    cursor: pointer;
-    font-size: 12px;
-    color: var(--ink-soft);
-    padding: 5px 14px;
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    background: var(--warm-white);
-    transition: all 0.15s;
-    user-select: none;
-  }
-  .radio-item input { display: none; }
-  .radio-item:hover { border-color: var(--gold-light); }
-  .radio-item.selected { background: var(--gold); border-color: var(--gold); color: white; font-weight: 500; }
+/* TERMS */
+.terms-box{background:var(--blush-xlight);border:1px solid var(--border-light);border-radius:4px;padding:16px 20px;font-size:12px;color:var(--ink-soft);line-height:1.75;margin-bottom:16px}
+.terms-box p{margin-bottom:8px}.terms-box p:last-child{margin-bottom:0}
+.terms-box strong{color:var(--ink);font-weight:500}
+.terms-list{margin-top:8px}
+.term-row{display:flex;gap:14px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--border-light)}
+.term-row:last-child{border-bottom:none}
+.term-num{font-size:10px;color:var(--blush);font-weight:600;min-width:18px;padding-top:2px;letter-spacing:0.06em}
+.term-title{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:3px}
+.term-detail{font-size:12px;color:var(--ink-soft);line-height:1.6}
+.term-detail strong{color:var(--ink);font-weight:500}
 
-  /* DIVIDERS */
-  .sub-divider {
-    height: 1px;
-    background: var(--border-light);
-    margin: 20px 0;
-  }
+/* DELIVERY BOX */
+.delivery-box{border:1px solid var(--border);border-radius:4px;padding:20px 22px;margin-bottom:14px}
+.delivery-box h4{font-family:Didot,'Bodoni MT',Georgia,serif;font-size:17px;font-weight:400;color:var(--ink);margin-bottom:4px}
+.delivery-box > p{font-size:12px;color:var(--ink-muted);margin-bottom:16px;line-height:1.6}
 
-  .sub-label {
-    font-family: Didot, 'Bodoni MT', 'Playfair Display', 'Book Antiqua', Georgia, serif;
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--ink-soft);
-    margin-bottom: 12px;
-    margin-top: 4px;
-    letter-spacing: 0.04em;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .sub-label::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border-light);
-  }
+/* SUBMIT */
+.submit-btn{width:100%;padding:15px;background:var(--blush);color:white;border:none;border-radius:4px;font-family:inherit;font-size:14px;font-weight:500;cursor:pointer;letter-spacing:0.04em;margin-top:8px;transition:opacity 0.15s}
+.submit-btn:hover{opacity:0.85}
+.submit-btn:active{transform:scale(0.99)}
 
-  /* DELIVERY SECTION */
-  .delivery-box {
-    background: var(--warm-white);
-    border: 1px solid var(--border);
-    border-radius: 3px;
-    padding: 22px 26px;
-    margin-bottom: 14px;
-  }
-  .delivery-box h4 {
-    font-family: Didot, 'Bodoni MT', 'Playfair Display', 'Book Antiqua', Georgia, serif;
-    font-size: 17px;
-    font-weight: 600;
-    color: var(--ink);
-    margin-bottom: 4px;
-    letter-spacing: 0.01em;
-  }
-  .delivery-box p {
-    font-size: 12px;
-    color: var(--ink-muted);
-    margin-bottom: 16px;
-    line-height: 1.6;
-  }
+/* SUCCESS */
+.success{text-align:center;padding:48px 32px;background:var(--white);border:1px solid var(--border);border-radius:4px}
+.success-icon{width:48px;height:48px;border-radius:50%;background:var(--blush-xlight);border:1px solid var(--blush-light);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:22px}
+.success h3{font-family:Didot,'Bodoni MT',Georgia,serif;font-size:24px;font-weight:400;margin-bottom:8px}
+.success p{font-size:13px;color:var(--ink-muted);line-height:1.6}
 
-  /* CREATOR NOTES PANEL */
-  .creator-note {
-    background: var(--gold-xlight);
-    border: 1px solid var(--border-light);
-    border-left: 2px solid var(--gold);
-    border-radius: 0 3px 3px 0;
-    padding: 14px 18px;
-    margin-top: 8px;
-    font-size: 12px;
-    color: var(--ink-soft);
-    line-height: 1.7;
-  }
-  .creator-note strong {
-    color: var(--gold);
-    font-weight: 500;
-    display: block;
-    margin-bottom: 2px;
-    font-size: 9px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-  }
+/* SIGN OFF */
+.sig-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:8px}
+.sig-field{display:flex;flex-direction:column;gap:4px}
+.sig-line{height:48px;border-bottom:1px solid var(--border)}
+.sig-lbl{font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-muted);margin-top:6px}
 
-  /* SIGNATURE */
-  .sig-block {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-    margin-top: 8px;
-  }
-  .sig-field {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-  .sig-line {
-    height: 48px;
-    border-bottom: 1px solid var(--border);
-    position: relative;
-  }
-  .sig-label {
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-muted);
-    margin-top: 6px;
-  }
+/* FOOTER */
+.doc-footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);text-align:center;font-size:11px;color:var(--ink-muted);letter-spacing:0.04em}
 
-  /* FOOTER */
-  .doc-footer {
-    margin-top: 48px;
-    padding-top: 24px;
-    border-top: 1px solid var(--border);
-    text-align: center;
-    font-size: 11px;
-    color: var(--ink-muted);
-    letter-spacing: 0.05em;
-  }
+/* DASHBOARD */
+.dash-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+.dash-header h2{font-family:Didot,'Bodoni MT',Georgia,serif;font-size:26px;font-weight:400}
+.dash-meta{font-size:12px;color:var(--ink-muted);margin-top:2px}
+.empty{text-align:center;padding:56px 32px;background:var(--white);border:1px solid var(--border);border-radius:4px}
+.empty h3{font-family:Didot,'Bodoni MT',Georgia,serif;font-size:20px;font-weight:400;color:var(--ink-soft);margin-bottom:8px}
+.empty p{font-size:13px;color:var(--ink-muted)}
 
-  /* PRINT */
-  /* TERMS LIST */
-  .terms-list { display: flex; flex-direction: column; gap: 0; margin-top: 4px; }
-  .term-row { display: flex; gap: 16px; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid var(--border-light); }
-  .term-row:last-child { border-bottom: none; }
-  .term-icon { font-family: "Cormorant Garamond", serif; font-size: 11px; color: var(--gold); letter-spacing: 0.08em; font-weight: 600; min-width: 22px; padding-top: 2px; }
-  .term-title { font-size: 13px; font-weight: 500; color: var(--ink); margin-bottom: 3px; }
-  .term-detail { font-size: 12px; color: var(--ink-soft); line-height: 1.65; }
-  .term-detail strong { color: var(--ink); font-weight: 500; }
-  .terms-statement { background: var(--gold-xlight); border: 1px solid var(--border-light); border-radius: 3px; padding: 16px 20px; font-size: 13px; color: var(--ink-soft); line-height: 1.75; }
-  .terms-statement p { margin-bottom: 10px; }
-  .terms-statement p:last-child { margin-bottom: 0; }
-  .terms-statement strong { color: var(--ink); font-weight: 500; }
+.resp-card{background:var(--white);border:1px solid var(--border);border-radius:4px;margin-bottom:12px;overflow:hidden}
+.resp-card-top{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;cursor:pointer;transition:background 0.15s}
+.resp-card-top:hover{background:var(--blush-xlight)}
+.resp-card-top-left h3{font-size:15px;font-weight:500;margin-bottom:3px}
+.resp-card-top-left .meta{font-size:11px;color:var(--ink-muted)}
+.resp-card-top-right{display:flex;align-items:center;gap:10px}
+.chevron{font-size:13px;color:var(--ink-muted);transition:transform 0.2s}
+.resp-card.open .chevron{transform:rotate(180deg)}
+.del-btn{font-size:11px;color:#A32D2D;background:none;border:1px solid rgba(163,45,45,0.25);border-radius:20px;padding:4px 12px;cursor:pointer;transition:all 0.15s}
+.del-btn:hover{background:rgba(163,45,45,0.06)}
 
-  @media print {
-    body { background: white; }
-    .page { padding: 24px 32px; }
-    .field-line, .field-area { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  }
+.resp-body{display:none;border-top:1px solid var(--border-light);padding:20px}
+.resp-card.open .resp-body{display:block}
+.resp-section{margin-bottom:24px}
+.resp-section:last-child{margin-bottom:0}
+.resp-section-title{font-size:9px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--blush);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border-light)}
+.resp-row{display:flex;gap:16px;margin-bottom:8px;font-size:13px;line-height:1.5}
+.resp-lbl{color:var(--ink-muted);min-width:200px;flex-shrink:0;font-size:12px}
+.resp-val{color:var(--ink);flex:1;white-space:pre-wrap}
+.resp-val.empty{color:var(--ink-muted);font-style:italic}
+.pills-display{display:flex;flex-wrap:wrap;gap:5px}
+.pill-tag{font-size:11px;padding:3px 10px;border-radius:20px;background:var(--blush-xlight);color:var(--blush);border:1px solid var(--blush-light)}
 
-  @media (max-width: 600px) {
-    .page { padding: 24px 20px; }
-    .fields-grid { grid-template-columns: 1fr; }
-    .field.span-2 { grid-column: span 1; }
-    .fields-grid.triple { grid-template-columns: 1fr 1fr; }
-    .check-group { grid-template-columns: 1fr; }
-    .check-group.three { grid-template-columns: 1fr 1fr; }
-    .sig-block { grid-template-columns: 1fr; }
-    .header h1 { font-size: 32px; }
-  }
+@media(max-width:600px){
+  .grid{grid-template-columns:1fr}.span2{grid-column:span 1}
+  .check-grid{grid-template-columns:1fr 1fr}.sig-grid{grid-template-columns:1fr}
+  .page{padding:24px 16px 48px}.top-nav{padding:0 16px}
+  .brief-header{padding:24px 20px}.brief-header h1{font-size:28px}
+}
 </style>
 </head>
 <body>
+
+<div class="top-nav">
+  <div class="nav-brand">Ruby</div>
+  <div class="nav-tabs">
+    <button class="nav-tab active" onclick="show('form', this)">Client brief</button>
+    <button class="nav-tab" onclick="show('dash', this)">Responses <span class="resp-badge" id="badge" style="display:none"></span></button>
+  </div>
+  <div style="width:60px"></div>
+</div>
+
+<!-- FORM VIEW -->
+<div id="view-form" class="view active">
 <div class="page">
 
-  <div class="header">
-    <div class="header-eyebrow">Wedding Content Creation</div>
+  <div class="brief-header">
+    <div class="eyebrow">Wedding Content Creation</div>
     <h1>Pre-Wedding <em>Client Brief</em></h1>
-    <div class="header-ornament">
-      <div class="header-ornament-line"></div>
-      <div class="header-ornament-dot"></div>
-      <div class="header-ornament-diamond"></div>
-      <div class="header-ornament-dot"></div>
-      <div class="header-ornament-line"></div>
-    </div>
-    <p class="header-sub">To be completed by the couple at least 4 weeks before the wedding date</p>
+    <div class="ornament"><div class="orn-line"></div><div class="orn-dot"></div><div class="orn-diamond"></div><div class="orn-dot"></div><div class="orn-line"></div></div>
+    <p>To be completed by the couple at least 4 weeks before the wedding date</p>
   </div>
 
-  <div class="intro-note">
-    <strong>A note from Ruby -</strong> I'm so honoured to be part of your day! This brief helps me plan every detail so nothing gets missed. The more you share, the better I can tailor the day to you. I'll follow up with any questions and we'll do a quick call to finalise the shot list before the big day. This document covers our full arrangement, content permissions, and all the logistics for the day.
-  </div>
+  <div class="intro-note"><strong>A note from Ruby -</strong> I'm so honoured to be part of your day! This brief helps me plan every detail so nothing gets missed. The more you share, the better I can tailor the day to you. I'll follow up with any questions and we'll do a quick call to finalise the shot list before the big day. This document covers our full arrangement, content permissions, and all the logistics for the day.</div>
 
-  <!-- SECTION 1: COUPLE & BASICS -->
+  <!-- S1 -->
   <div class="section">
-    <div class="section-header">
-      <div class="section-num">1</div>
-      <div class="section-title">The Couple &amp; Basics</div>
-    </div>
-    <div class="fields-grid">
-      <div class="field">
-        <label>Full name - Partner 1</label>
-        <input class="field-line" type="text" placeholder="e.g. Sarah Johnson">
-      </div>
-      <div class="field">
-        <label>Full name - Partner 2</label>
-        <input class="field-line" type="text" placeholder="e.g. Sarah Johnson">
-      </div>
-      <div class="field">
-        <label>Instagram handle (Partner 1)</label>
-        <input class="field-line" type="text" placeholder="@handle">
-      </div>
-      <div class="field">
-        <label>Instagram handle (Partner 2)</label>
-        <input class="field-line" type="text" placeholder="@handle">
-      </div>
-      <div class="field">
-        <label>TikTok handle (if applicable)</label>
-        <input class="field-line" type="text" placeholder="@handle">
-      </div>
-      <div class="field">
-        <label>Wedding date</label>
-        <input class="field-line" type="text" placeholder="DD / MM / YYYY">
-      </div>
-      <div class="field">
-        <label>Best contact (Bride / Groom)</label>
-        <input class="field-line" type="text" placeholder="Name + mobile number">
-      </div>
-      <div class="field">
-        <label>Emergency contact on the day</label>
-        <input class="field-line" type="text" placeholder="Name + mobile - ideally a bridesmaid/groomsman">
-      </div>
-      <div class="field span-2">
-        <label>Wedding planner / day-of coordinator (name + contact)</label>
-        <input class="field-line" type="text" placeholder="Name, role, mobile number - leave blank if none">
-      </div>
+    <div class="section-hdr"><div class="sec-num">1</div><div class="sec-title">The couple & basics</div></div>
+    <div class="grid">
+      <div class="field"><label>Full name - Partner 1</label><input type="text" id="name1" placeholder="e.g. Sarah Johnson"></div>
+      <div class="field"><label>Full name - Partner 2</label><input type="text" id="name2" placeholder="e.g. James Johnson"></div>
+      <div class="field"><label>Instagram handle (Partner 1)</label><input type="text" id="ig1" placeholder="@handle"></div>
+      <div class="field"><label>Instagram handle (Partner 2)</label><input type="text" id="ig2" placeholder="@handle"></div>
+      <div class="field"><label>TikTok handle (if applicable)</label><input type="text" id="tt" placeholder="@handle"></div>
+      <div class="field"><label>Wedding date</label><input type="text" id="wdate" placeholder="DD / MM / YYYY"></div>
+      <div class="field"><label>Best contact</label><input type="text" id="contact" placeholder="Name + mobile number"></div>
+      <div class="field"><label>Emergency contact on the day</label><input type="text" id="emergency" placeholder="Name + mobile - ideally a bridesmaid/groomsman"></div>
+      <div class="field span2"><label>Wedding planner / coordinator (name + contact)</label><input type="text" id="planner" placeholder="Leave blank if none"></div>
     </div>
   </div>
 
-  <!-- SECTION 2: VENUES & LOGISTICS -->
+  <!-- S2 -->
   <div class="section">
-    <div class="section-header">
-      <div class="section-num">2</div>
-      <div class="section-title">Venues &amp; Day Logistics</div>
-    </div>
+    <div class="section-hdr"><div class="sec-num">2</div><div class="sec-title">Venues & day logistics</div></div>
 
-    <div class="sub-label">Getting Ready</div>
-    <div class="fields-grid">
-      <div class="field span-2">
-        <label>Where will the bride / bridal party be getting ready? (full address)</label>
-        <input class="field-line" type="text" placeholder="Hotel name, room number, or address">
-      </div>
+    <div class="sub-label">Getting ready</div>
+    <div class="grid">
+      <div class="field span2"><label>Where will the bride / bridal party be getting ready? (full address)</label><input type="text" id="bride_loc"></div>
+      <div class="field"><label>Getting-ready start time (bride)</label><input type="text" id="bride_start" placeholder="e.g. 8:00 AM"></div>
+      <div class="field"><label>Hair & makeup finish time (approx)</label><input type="text" id="hmu" placeholder="e.g. 12:30 PM"></div>
+      <div class="field span2"><label>Where will the groom / groomsmen be getting ready? (full address)</label><input type="text" id="groom_loc"></div>
+      <div class="field"><label>Getting-ready start time (groom)</label><input type="text" id="groom_start" placeholder="e.g. 9:00 AM"></div>
       <div class="field">
-        <label>Getting-ready start time (bride)</label>
-        <input class="field-line" type="text" placeholder="e.g. 8:00 AM">
-      </div>
-      <div class="field">
-        <label>Hair &amp; makeup finish time (approx)</label>
-        <input class="field-line" type="text" placeholder="e.g. 12:30 PM">
-      </div>
-      <div class="field span-2">
-        <label>Where will the groom / groomsmen be getting ready? (full address)</label>
-        <input class="field-line" type="text" placeholder="Hotel name, room number, or address">
-      </div>
-      <div class="field">
-        <label>Getting-ready start time (groom)</label>
-        <input class="field-line" type="text" placeholder="e.g. 9:00 AM">
-      </div>
-      <div class="field">
-        <label>Are both locations accessible to me simultaneously?</label>
-        <div class="radio-group" style="margin-top:8px">
-          <label class="radio-item"><input type="radio" name="access"> Yes - same location</label>
-          <label class="radio-item"><input type="radio" name="access"> Close enough to travel between</label>
-          <label class="radio-item"><input type="radio" name="access"> No - prioritise one</label>
+        <label>Can I access both locations?</label>
+        <div class="pills" id="p_access">
+          <span class="pill" data-val="Yes - same location">Yes - same location</span>
+          <span class="pill" data-val="Close enough to travel between">Close enough to travel between</span>
+          <span class="pill" data-val="No - prioritise one">No - prioritise one</span>
         </div>
       </div>
-      <div class="field span-2">
-        <label>If I need to choose one getting-ready location, which should I prioritise?</label>
-        <input class="field-line" type="text" placeholder="Bride / Groom / Equal - and why">
-      </div>
+      <div class="field span2"><label>If I need to choose one location, which should I prioritise?</label><input type="text" id="priority" placeholder="Bride / Groom / Equal - and why"></div>
     </div>
 
     <div class="sub-divider"></div>
     <div class="sub-label">Ceremony</div>
-    <div class="fields-grid">
-      <div class="field span-2">
-        <label>Ceremony venue name &amp; full address</label>
-        <input class="field-line" type="text" placeholder="">
-      </div>
-      <div class="field">
-        <label>Ceremony start time</label>
-        <input class="field-line" type="text" placeholder="e.g. 2:00 PM">
-      </div>
-      <div class="field">
-        <label>Estimated ceremony duration</label>
-        <input class="field-line" type="text" placeholder="e.g. 30–45 minutes">
-      </div>
-      <div class="field span-2">
-        <label>Are there any photography/filming restrictions during the ceremony?</label>
-        <input class="field-area" placeholder="e.g. unplugged ceremony, no flash, specific areas off-limits, officiant rules…" rows="2"></input>
-      </div>
+    <div class="grid">
+      <div class="field span2"><label>Ceremony venue name & full address</label><input type="text" id="cer_venue"></div>
+      <div class="field"><label>Ceremony start time</label><input type="text" id="cer_time" placeholder="e.g. 2:00 PM"></div>
+      <div class="field"><label>Estimated duration</label><input type="text" id="cer_dur" placeholder="e.g. 30-45 minutes"></div>
+      <div class="field span2"><label>Any filming restrictions during the ceremony?</label><textarea id="cer_restrict" placeholder="e.g. unplugged ceremony, no flash, specific areas off-limits..."></textarea></div>
     </div>
 
     <div class="sub-divider"></div>
     <div class="sub-label">Reception</div>
-    <div class="fields-grid">
-      <div class="field span-2">
-        <label>Reception venue name &amp; full address (if different)</label>
-        <input class="field-line" type="text" placeholder="Leave blank if same as ceremony">
-      </div>
-      <div class="field">
-        <label>Reception doors open / cocktail hour start</label>
-        <input class="field-line" type="text" placeholder="e.g. 3:30 PM">
-      </div>
-      <div class="field">
-        <label>Reception end time / last song</label>
-        <input class="field-line" type="text" placeholder="e.g. 11:30 PM">
-      </div>
+    <div class="grid">
+      <div class="field span2"><label>Reception venue name & full address (if different from ceremony)</label><input type="text" id="rec_venue" placeholder="Leave blank if same"></div>
+      <div class="field"><label>Cocktail hour / doors open</label><input type="text" id="rec_start" placeholder="e.g. 3:30 PM"></div>
+      <div class="field"><label>Reception end time / last song</label><input type="text" id="rec_end" placeholder="e.g. 11:30 PM"></div>
     </div>
   </div>
 
-  <!-- SECTION 3: FULL DAY TIMELINE -->
+  <!-- S3 -->
   <div class="section">
-    <div class="section-header">
-      <div class="section-num">3</div>
-      <div class="section-title">Full Day Timeline</div>
+    <div class="section-hdr"><div class="sec-num">3</div><div class="sec-title">Full day timeline</div></div>
+    <div class="creator-note"><strong>A note from Ruby</strong>This is the single most useful thing you can give me - it means I can be in the right place at the right time without having to pull you aside and ask on the day.</div>
+    <div class="grid one">
+      <div class="field"><label>Full timeline (hour by hour)</label><textarea id="timeline" style="min-height:150px" placeholder="8:00 AM - Bridal prep begins at [venue]&#10;12:00 PM - First look&#10;2:00 PM - Ceremony begins&#10;3:30 PM - Cocktail hour&#10;5:00 PM - Grand entrance into reception&#10;..."></textarea></div>
     </div>
-    <div class="creator-note">
-      <strong>Creator's note</strong>
-      Walk me through the day hour-by-hour. This is the single most useful thing you can give me - it means I can be in the right place at the right time without having to pull you aside and ask on the day.
-    </div>
-    <div style="margin-top:14px">
-      <textarea class="field-area" style="min-height:200px" placeholder="Example format:
-8:00 AM - Bridal prep begins at The Versace Hotel, Room 412
-10:30 AM - Groom getting ready at own home
-12:00 PM - First look (garden of ceremony venue)
-1:00 PM - Couple portraits + bridal party photos
-2:00 PM - Guests arrive / ceremony begins
-2:45 PM - Ceremony ends, guests move to cocktail hour
-3:00 PM - Cocktail hour (outdoor terrace)
-4:30 PM - Grand entrance into reception
-5:00 PM - Speeches / toasts
-6:00 PM - First dance
-6:30 PM - Cake cutting
-7:00 PM - Open dance floor
-10:00 PM - Bouquet toss / special send-off
-11:00 PM - Night ends"></textarea>
-    </div>
-    <div class="fields-grid" style="margin-top:12px">
-      <div class="field">
-        <label>What time should I arrive on the day?</label>
-        <input class="field-line" type="text" placeholder="e.g. 7:45 AM at bridal prep location">
-      </div>
-      <div class="field">
-        <label>What time can I leave?</label>
-        <input class="field-line" type="text" placeholder="e.g. after bouquet toss, approx 10 PM">
-      </div>
+    <div class="grid" style="margin-top:14px">
+      <div class="field"><label>What time should I arrive?</label><input type="text" id="arrive" placeholder="e.g. 7:45 AM at bridal prep location"></div>
+      <div class="field"><label>What time can I leave?</label><input type="text" id="leave" placeholder="e.g. after bouquet toss, approx 10 PM"></div>
     </div>
   </div>
 
-  <!-- SECTION 4: MUST-HAVE MOMENTS -->
+  <!-- S4 -->
   <div class="section">
-    <div class="section-header">
-      <div class="section-num">4</div>
-      <div class="section-title">Must-Have Moments &amp; Shot List</div>
+    <div class="section-hdr"><div class="sec-num">4</div><div class="sec-title">Must-have moments & shot list</div></div>
+    <div class="field-label" style="margin-bottom:8px">Tick everything you definitely want captured</div>
+    <div class="check-grid" id="shots">
+      <span class="check-item" data-id="s_dress"><span class="cb"></span>Dress hanging / flat lay</span>
+      <span class="check-item" data-id="s_details"><span class="cb"></span>Shoes, jewellery, details</span>
+      <span class="check-item" data-id="s_dressing"><span class="cb"></span>Bride putting on dress</span>
+      <span class="check-item" data-id="s_veil"><span class="cb"></span>Veil / accessories</span>
+      <span class="check-item" data-id="s_bridesmaids"><span class="cb"></span>Bridesmaids getting ready</span>
+      <span class="check-item" data-id="s_hmu"><span class="cb"></span>Hair & makeup process</span>
+      <span class="check-item" data-id="s_groom"><span class="cb"></span>Groom getting dressed</span>
+      <span class="check-item" data-id="s_groomsmen"><span class="cb"></span>Groomsmen / tie moment</span>
+      <span class="check-item" data-id="s_champagne"><span class="cb"></span>Getting-ready drinks</span>
+      <span class="check-item" data-id="s_letter"><span class="cb"></span>Gift / letter exchange</span>
+      <span class="check-item" data-id="s_firstlook"><span class="cb"></span>First look reveal</span>
+      <span class="check-item" data-id="s_parentreveal"><span class="cb"></span>Parent / family reveal</span>
+      <span class="check-item" data-id="s_walkdown"><span class="cb"></span>Bride walking down aisle</span>
+      <span class="check-item" data-id="s_groomreaction"><span class="cb"></span>Groom's reaction at altar</span>
+      <span class="check-item" data-id="s_vows"><span class="cb"></span>Vow exchange</span>
+      <span class="check-item" data-id="s_rings"><span class="cb"></span>Ring exchange close-up</span>
+      <span class="check-item" data-id="s_kiss"><span class="cb"></span>First kiss</span>
+      <span class="check-item" data-id="s_aisle_out"><span class="cb"></span>Walking back down the aisle</span>
+      <span class="check-item" data-id="s_reactions"><span class="cb"></span>Guest reactions & tears</span>
+      <span class="check-item" data-id="s_confetti"><span class="cb"></span>Confetti / petal exit</span>
+      <span class="check-item" data-id="s_portraits"><span class="cb"></span>Couple portraits</span>
+      <span class="check-item" data-id="s_decor"><span class="cb"></span>Venue / decor details</span>
+      <span class="check-item" data-id="s_cocktail"><span class="cb"></span>Cocktail hour candids</span>
+      <span class="check-item" data-id="s_entrance"><span class="cb"></span>Grand entrance</span>
+      <span class="check-item" data-id="s_speeches"><span class="cb"></span>Speeches & toasts</span>
+      <span class="check-item" data-id="s_firstdance"><span class="cb"></span>First dance</span>
+      <span class="check-item" data-id="s_parentdance"><span class="cb"></span>Parent dances</span>
+      <span class="check-item" data-id="s_cake"><span class="cb"></span>Cake cutting</span>
+      <span class="check-item" data-id="s_dancefloor"><span class="cb"></span>Dancefloor energy</span>
+      <span class="check-item" data-id="s_bouquet"><span class="cb"></span>Bouquet toss</span>
+      <span class="check-item" data-id="s_sendoff"><span class="cb"></span>Special send-off / sparklers</span>
+      <span class="check-item" data-id="s_interviews"><span class="cb"></span>Guest messages to camera</span>
     </div>
-
-    <div class="sub-label">Tick every moment you definitely want captured</div>
-    <div class="check-group three" id="shotlist">
-      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Dress hanging / flat lay</label>
-      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Shoes, jewellery, details</label>
-      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Bride putting on dress</label>
-      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Veil / accessories being put on</label>
-      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Bridesmaids getting ready</label>
-      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Hair &amp; makeup process</label>
-      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Groom getting dressed</label>
-      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Groomsmen helping / ties</label>
-      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Champagne / getting-ready drinks</label>
-      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Gift / letter exchange (bride &amp; groom)</label>
-      <label class="check-item"><input type="checkbox"><span class="check-box"></span>First look reveal</label>
-      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Parent / family reveal reactions</label>
-      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Bridal party walking in</label>
-      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Bride walking down the aisle</label>
-      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Groom's reaction at altar</label>
-      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Vow exchange</label>
-      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Ring exchange close-up</label>
-      <label class="check-item"><input type="checkbox"><span class="check-box"></span>First kiss</label>
-      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Walking back down the aisle</label>
-      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Guest reactions &amp; tears</label>
-      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Confetti / petal exit</label>
-      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Couple portraits (golden hour)</label>
-      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Venue / decor detail shots</label>
-      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Table settings &amp; florals</label>
-      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Cocktail hour candids</label>
-      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Grand entrance into reception</label>
-      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Speeches &amp; toasts (reactions)</label>
-      <label class="check-item"><input type="checkbox"><span class="check-box"></span>First dance</label>
-      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Parent dances</label>
-      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Cake cutting</label>
-      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Cake smash / faces</label>
-      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Open dance floor energy</label>
-      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Bouquet toss</label>
-      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Special send-off / sparklers</label>
-      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Photo booth / lawn games</label>
-      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Guest interviews / messages to camera</label>
-    </div>
-
-    <div style="margin-top:16px">
-      <div class="field">
-        <label>Any specific trending reels / TikTok formats you want recreated?</label>
-        <textarea class="field-area" placeholder="e.g. 'Who is she?' bridal reveal, POV walking into reception, vow whisper trend, 'get ready with me' reel… drop links to any inspo videos"></textarea>
-      </div>
-    </div>
-    <div style="margin-top:12px">
-      <div class="field">
-        <label>Other must-have or must-avoid shots (anything not covered above)</label>
-        <textarea class="field-area" placeholder="e.g. 'Must get footage of my late grandmother's locket', 'Please avoid close-ups of Aunt Carol', 'Want the ring box detail', etc."></textarea>
-      </div>
+    <div class="grid one" style="margin-top:16px">
+      <div class="field"><label>Specific reels / TikTok trends you want recreated</label><textarea id="trends" placeholder="Drop links or describe the format - e.g. 'Who is she?' reveal, POV walking into reception, GRWM..."></textarea></div>
+      <div class="field"><label>Any other must-haves or must-avoids</label><textarea id="other_shots" placeholder="e.g. 'Must capture my grandmother's locket', 'Please avoid close-ups of Aunt Carol'..."></textarea></div>
     </div>
   </div>
 
-  <!-- SECTION 5: PEOPLE & VIPs -->
+  <!-- S5 -->
   <div class="section">
-    <div class="section-header">
-      <div class="section-num">5</div>
-      <div class="section-title">Key People &amp; VIPs</div>
-    </div>
-    <div class="creator-note">
-      <strong>Why this matters</strong>
-      Knowing who the important faces are means I can capture their reactions naturally, without interrupting the day to ask. List first names at minimum.
-    </div>
-    <div class="fields-grid" style="margin-top:14px">
-      <div class="field">
-        <label>Bridesmaids (first names)</label>
-        <textarea class="field-area" placeholder="e.g. Mia, Sophie, Claire, Jess"></textarea>
-      </div>
-      <div class="field">
-        <label>Groomsmen / bridal party (first names)</label>
-        <textarea class="field-area" placeholder="e.g. Liam, Jake, Tom, Will"></textarea>
-      </div>
-      <div class="field">
-        <label>Bride's parents / family to feature</label>
-        <textarea class="field-area" placeholder="Names and relationship (e.g. Mum – Sandra, Dad – Greg)"></textarea>
-      </div>
-      <div class="field">
-        <label>Groom's parents / family to feature</label>
-        <textarea class="field-area" placeholder="Names and relationship"></textarea>
-      </div>
-      <div class="field span-2">
-        <label>Any VIP guests I should look out for specifically (grandparents, close friends etc.)</label>
-        <textarea class="field-area" placeholder="e.g. 'My 90-year-old nan Margaret - would love to capture her at the ceremony', 'Best friends who flew from overseas'"></textarea>
-      </div>
-      <div class="field span-2">
-        <label>Any guests who should NOT be filmed or photographed (privacy / personal reasons)</label>
-        <textarea class="field-area" placeholder="Names or descriptions - I will keep this completely confidential"></textarea>
-      </div>
+    <div class="section-hdr"><div class="sec-num">5</div><div class="sec-title">Key people & VIPs</div></div>
+    <div class="creator-note"><strong>Why this matters</strong>Knowing who the important faces are means I can capture their reactions naturally, without interrupting the day to ask.</div>
+    <div class="grid">
+      <div class="field"><label>Bridesmaids (first names)</label><textarea id="bridesmaids" placeholder="e.g. Mia, Sophie, Claire, Jess"></textarea></div>
+      <div class="field"><label>Groomsmen / bridal party (first names)</label><textarea id="groomsmen" placeholder="e.g. Liam, Jake, Tom, Will"></textarea></div>
+      <div class="field"><label>Bride's parents / family to feature</label><textarea id="bride_family" placeholder="e.g. Mum - Sandra, Dad - Greg"></textarea></div>
+      <div class="field"><label>Groom's parents / family to feature</label><textarea id="groom_family" placeholder="e.g. Mum - Diane, Dad - Rob"></textarea></div>
+      <div class="field span2"><label>VIP guests I should look out for</label><textarea id="vips" placeholder="e.g. 'My 90-year-old nan Margaret', 'Best friends who flew in from overseas'"></textarea></div>
+      <div class="field span2"><label>Any guests who should NOT be filmed or photographed</label><textarea id="no_film" placeholder="Names or descriptions - kept completely confidential"></textarea></div>
     </div>
   </div>
 
-  <!-- SECTION 6: AESTHETIC & STYLE -->
+  <!-- S6 -->
   <div class="section">
-    <div class="section-header">
-      <div class="section-num">6</div>
-      <div class="section-title">Aesthetic, Vibe &amp; Style</div>
-    </div>
-    <div class="fields-grid">
-      <div class="field span-2">
-        <label>How would you describe the overall vibe of your wedding?</label>
-        <div class="check-group three" id="vibes">
-          <label class="check-item"><input type="checkbox"><span class="check-box"></span>Romantic &amp; dreamy</label>
-          <label class="check-item"><input type="checkbox"><span class="check-box"></span>Elegant &amp; refined</label>
-          <label class="check-item"><input type="checkbox"><span class="check-box"></span>Boho / outdoor</label>
-          <label class="check-item"><input type="checkbox"><span class="check-box"></span>Modern &amp; editorial</label>
-          <label class="check-item"><input type="checkbox"><span class="check-box"></span>Fun &amp; party energy</label>
-          <label class="check-item"><input type="checkbox"><span class="check-box"></span>Intimate &amp; emotional</label>
-          <label class="check-item"><input type="checkbox"><span class="check-box"></span>Cultural / traditional</label>
-          <label class="check-item"><input type="checkbox"><span class="check-box"></span>Luxury / glam</label>
-          <label class="check-item"><input type="checkbox"><span class="check-box"></span>Rustic / relaxed</label>
+    <div class="section-hdr"><div class="sec-num">6</div><div class="sec-title">Aesthetic, vibe & style</div></div>
+    <div class="grid">
+      <div class="field span2">
+        <label>How would you describe the vibe of your wedding?</label>
+        <div class="check-grid" style="margin-top:8px" id="vibes">
+          <span class="check-item" data-id="v_romantic"><span class="cb"></span>Romantic & dreamy</span>
+          <span class="check-item" data-id="v_elegant"><span class="cb"></span>Elegant & refined</span>
+          <span class="check-item" data-id="v_boho"><span class="cb"></span>Boho / outdoor</span>
+          <span class="check-item" data-id="v_modern"><span class="cb"></span>Modern & editorial</span>
+          <span class="check-item" data-id="v_fun"><span class="cb"></span>Fun & party energy</span>
+          <span class="check-item" data-id="v_intimate"><span class="cb"></span>Intimate & emotional</span>
+          <span class="check-item" data-id="v_cultural"><span class="cb"></span>Cultural / traditional</span>
+          <span class="check-item" data-id="v_luxury"><span class="cb"></span>Luxury / glam</span>
+          <span class="check-item" data-id="v_rustic"><span class="cb"></span>Rustic / relaxed</span>
         </div>
       </div>
-      <div class="field span-2">
-        <label>What is your wedding colour palette?</label>
-        <input class="field-line" type="text" placeholder="e.g. dusty rose, sage green, champagne gold">
-      </div>
-      <div class="field span-2">
+      <div class="field"><label>Wedding colour palette</label><input type="text" id="palette" placeholder="e.g. dusty rose, sage green, champagne"></div>
+      <div class="field">
         <label>Content style preference</label>
-        <div class="radio-group" style="margin-top:8px">
-          <label class="radio-item"><input type="radio" name="style"> Warm &amp; golden tones</label>
-          <label class="radio-item"><input type="radio" name="style"> Bright &amp; airy</label>
-          <label class="radio-item"><input type="radio" name="style"> Moody &amp; cinematic</label>
-          <label class="radio-item"><input type="radio" name="style"> True-to-life / natural</label>
-          <label class="radio-item"><input type="radio" name="style"> No preference</label>
+        <div class="pills" id="p_style">
+          <span class="pill" data-val="Warm & golden">Warm & golden</span>
+          <span class="pill" data-val="Bright & airy">Bright & airy</span>
+          <span class="pill" data-val="Moody & cinematic">Moody & cinematic</span>
+          <span class="pill" data-val="True-to-life">True-to-life</span>
+          <span class="pill" data-val="No preference">No preference</span>
         </div>
       </div>
-      <div class="field span-2">
-        <label>Inspiration reels / content creator accounts you love (drop links or @handles)</label>
-        <textarea class="field-area" placeholder="Even a few TikTok or Instagram accounts whose editing style resonates with you is super helpful"></textarea>
-      </div>
-      <div class="field span-2">
-        <label>Music taste for any edited reels (genres, artists, or specific songs you love)</label>
-        <textarea class="field-area" placeholder="e.g. 'emotional ballads for ceremony clips', 'pop hits for the reception reel', 'our song is…'"></textarea>
-      </div>
+      <div class="field span2"><label>Inspo reels / accounts you love (links or @handles)</label><textarea id="inspo" placeholder="A few TikTok or Instagram accounts whose editing style you love"></textarea></div>
+      <div class="field span2"><label>Music taste for edited reels (genres, artists, or specific songs)</label><textarea id="music" placeholder="e.g. 'emotional ballads for ceremony clips', 'pop hits for the reception reel', 'our song is...'"></textarea></div>
     </div>
   </div>
 
-  <!-- SECTION 7: VENDORS -->
+  <!-- S7 -->
   <div class="section">
-    <div class="section-header">
-      <div class="section-num">7</div>
-      <div class="section-title">Vendor Team</div>
-    </div>
-    <div class="creator-note">
-      <strong>Why I need this</strong>
-      I'll be working alongside your photographer and other vendors on the day, so knowing who's who helps me coordinate seamlessly - ensuring we all give each other the space to capture every moment perfectly.
-    </div>
-    <div class="fields-grid" style="margin-top:14px">
-      <div class="field">
-        <label>Photographer (name + contact)</label>
-        <input class="field-line" type="text" placeholder="">
-      </div>
-      <div class="field">
-        <label>Videographer (name + contact)</label>
-        <input class="field-line" type="text" placeholder="If applicable">
-      </div>
-      <div class="field">
-        <label>Wedding planner / coordinator</label>
-        <input class="field-line" type="text" placeholder="">
-      </div>
-      <div class="field">
-        <label>MC / DJ / Band name</label>
-        <input class="field-line" type="text" placeholder="">
-      </div>
-      <div class="field span-2">
-        <label>Are there any vendor restrictions or sensitivities I should be aware of?</label>
-        <input class="field-area" placeholder="e.g. photographer prefers content creators to stay off to the side during portraits, DJ restrictions on filming equipment on the dancefloor"></input>
-      </div>
+    <div class="section-hdr"><div class="sec-num">7</div><div class="sec-title">Vendor team</div></div>
+    <div class="creator-note"><strong>Why I need this</strong>I'll be working alongside your photographer and other vendors on the day, so knowing who's who helps me coordinate seamlessly - ensuring we all give each other the space to capture every moment perfectly.</div>
+    <div class="grid">
+      <div class="field"><label>Photographer (name + contact)</label><input type="text" id="photographer"></div>
+      <div class="field"><label>Videographer (name + contact)</label><input type="text" id="videographer" placeholder="If applicable"></div>
+      <div class="field"><label>Wedding planner / coordinator</label><input type="text" id="coordinator"></div>
+      <div class="field"><label>MC / DJ / Band</label><input type="text" id="dj"></div>
+      <div class="field span2"><label>Any vendor restrictions or sensitivities I should know about?</label><textarea id="vendor_notes" placeholder="e.g. photographer prefers content creators stay to the side during portraits..."></textarea></div>
     </div>
   </div>
 
-  <!-- SECTION 8: CULTURAL / RELIGIOUS -->
+  <!-- S8 -->
   <div class="section">
-    <div class="section-header">
-      <div class="section-num">8</div>
-      <div class="section-title">Cultural, Religious &amp; Special Traditions</div>
-    </div>
-    <div class="fields-grid">
-      <div class="field span-2">
-        <label>Are there any cultural or religious traditions I should know about before the day?</label>
-        <textarea class="field-area" placeholder="e.g. tea ceremony, henna ritual, hora dance, unity candle, handfasting, specific order of events that differs from a typical western wedding"></textarea>
-      </div>
-      <div class="field span-2">
-        <label>Are there any surprises planned (for each other or for guests) that I should be aware of and NOT spoil?</label>
-        <textarea class="field-area" placeholder="e.g. surprise performance, hidden letter reveal, special moment you want captured but kept secret until it happens"></textarea>
-      </div>
+    <div class="section-hdr"><div class="sec-num">8</div><div class="sec-title">Cultural, religious & special traditions</div></div>
+    <div class="grid one">
+      <div class="field"><label>Any cultural or religious traditions I should know about?</label><textarea id="traditions" placeholder="e.g. tea ceremony, hora dance, unity candle, handfasting..."></textarea></div>
+      <div class="field"><label>Any surprises planned that I should know about but NOT spoil?</label><textarea id="surprises" placeholder="e.g. surprise performance, hidden letter reveal..."></textarea></div>
     </div>
   </div>
 
-  <!-- SECTION 9: DELIVERABLES -->
+  <!-- S9 -->
   <div class="section">
-    <div class="section-header">
-      <div class="section-num">9</div>
-      <div class="section-title">Content Deliverables &amp; Arrangement</div>
-    </div>
+    <div class="section-hdr"><div class="sec-num">9</div><div class="sec-title">Content deliverables & arrangement</div></div>
 
     <div class="delivery-box">
       <h4>What you will receive</h4>
       <p>The following deliverables are confirmed as part of this arrangement and are not subject to change.</p>
       <div class="terms-list">
-        <div class="term-row">
-          <div class="term-icon">01</div>
-          <div class="term-body">
-            <div class="term-title">Full raw content gallery</div>
-            <div class="term-detail">All photos and videos captured throughout the day, sorted to remove duplicates and anything blurry, then organised by moment (getting ready · ceremony · portraits · reception), and delivered via Google Drive within <strong>24 hours</strong> of the event.</div>
-          </div>
-        </div>
-        <div class="term-row">
-          <div class="term-icon">02</div>
-          <div class="term-body">
-            <div class="term-title">1 hero highlight reel</div>
-            <div class="term-detail">A 60–120 second vertical edit covering the full day, music-synced and ready to post to Instagram Reels or TikTok. Delivered within <strong>5–7 days</strong> of the event.</div>
-          </div>
-        </div>
-        <div class="term-row">
-          <div class="term-icon">03</div>
-          <div class="term-body">
-            <div class="term-title">Up to 3 short-form clips</div>
-            <div class="term-detail">Up to 3 individual 15–30 second vertical clips, each optimised for social media. You're welcome to suggest specific moments you'd love edited - or leave it entirely to Ruby and let the content speak for itself. Delivered within <strong>5–7 days</strong> of the event.</div>
-          </div>
-        </div>
+        <div class="term-row"><div class="term-num">01</div><div><div class="term-title">Full raw content gallery</div><div class="term-detail">All photos and videos captured throughout the day, sorted to remove duplicates and anything blurry, then organised by moment (getting ready - ceremony - portraits - reception), and delivered via Google Drive within <strong>24 hours</strong> of the event.</div></div></div>
+        <div class="term-row"><div class="term-num">02</div><div><div class="term-title">1 hero highlight reel</div><div class="term-detail">A 60-120 second vertical edit covering the full day, music-synced and ready to post to Instagram Reels or TikTok. Delivered within <strong>5-7 days</strong> of the event.</div></div></div>
+        <div class="term-row"><div class="term-num">03</div><div><div class="term-title">Up to 3 short-form clips</div><div class="term-detail">Up to 3 individual 15-30 second vertical clips, each optimised for social media. You're welcome to suggest specific moments you'd love edited - or leave it entirely to Ruby and let the content speak for itself. Delivered within <strong>5-7 days</strong> of the event.</div></div></div>
       </div>
-      <div class="fields-grid" style="margin-top:20px">
-        <div class="field">
-          <label>Coverage start time</label>
-          <input class="field-line" type="text" placeholder="e.g. 8:00 AM - bridal prep">
-        </div>
-        <div class="field">
-          <label>Coverage start location</label>
-          <input class="field-line" type="text" placeholder="e.g. bridal suite, The Grand Hotel">
-        </div>
+      <div class="grid" style="margin-top:20px">
+        <div class="field"><label>Coverage start time</label><input type="text" id="cov_start" placeholder="e.g. 8:00 AM - bridal prep"></div>
+        <div class="field"><label>Coverage start location</label><input type="text" id="cov_location" placeholder="e.g. bridal suite, The Grand Hotel"></div>
       </div>
     </div>
 
     <div class="delivery-box">
-      <h4>Reception coverage &amp; wrap time</h4>
-      <p>Late-night content quality drops significantly once the dancefloor opens and lighting dims. To protect turnaround time and content quality, we agree a clear wrap point in advance.</p>
-      <div class="fields-grid">
-        <div class="field span-2">
+      <h4>Reception coverage & wrap time</h4>
+      <p>Late-night content quality drops once the dancefloor opens and lighting dims. To protect turnaround time and content quality, we agree a clear wrap point in advance.</p>
+      <div class="grid">
+        <div class="field span2">
           <label>How should coverage end?</label>
-          <div class="radio-group" style="margin-top:8px">
-            <label class="radio-item"><input type="radio" name="wrap"> Fixed time (I leave at an agreed hour)</label>
-            <label class="radio-item"><input type="radio" name="wrap"> Milestone moment (I leave after a specific event)</label>
-            <label class="radio-item"><input type="radio" name="wrap"> Both - whichever comes first</label>
+          <div class="pills" id="p_wrap">
+            <span class="pill" data-val="Fixed time">Fixed time (I leave at an agreed hour)</span>
+            <span class="pill" data-val="Milestone moment">Milestone moment (I leave after a specific event)</span>
+            <span class="pill" data-val="Both - whichever comes first">Both - whichever comes first</span>
           </div>
         </div>
-        <div class="field">
-          <label>Fixed wrap time (if applicable)</label>
-          <input class="field-line" type="text" placeholder="e.g. 10:00 PM">
-        </div>
+        <div class="field"><label>Fixed wrap time (if applicable)</label><input type="text" id="wrap_time" placeholder="e.g. 10:00 PM"></div>
         <div class="field">
           <label>Milestone wrap moment (if applicable)</label>
-          <div class="radio-group" style="margin-top:8px">
-            <label class="radio-item"><input type="radio" name="milestone"> After first dance</label>
-            <label class="radio-item"><input type="radio" name="milestone"> After cake cutting</label>
-            <label class="radio-item"><input type="radio" name="milestone"> After bouquet toss</label>
-            <label class="radio-item"><input type="radio" name="milestone"> After send-off / exit</label>
-            <label class="radio-item"><input type="radio" name="milestone"> Other (specify below)</label>
+          <div class="pills" id="p_milestone">
+            <span class="pill" data-val="After first dance">After first dance</span>
+            <span class="pill" data-val="After cake cutting">After cake cutting</span>
+            <span class="pill" data-val="After bouquet toss">After bouquet toss</span>
+            <span class="pill" data-val="After send-off / exit">After send-off / exit</span>
+            <span class="pill" data-val="Other">Other</span>
           </div>
         </div>
-        <div class="field span-2">
-          <label>Is there a specific late-night moment you absolutely want captured before I wrap?</label>
-          <input class="field-area" placeholder="e.g. surprise performance at 9 PM, sparkler exit at 10:30 PM, last song dedication - if so I'll stay specifically for this then wrap immediately after"></input>
-        </div>
-        <div class="field span-2">
-          <label>Open dancefloor coverage</label>
-          <div class="radio-group" style="margin-top:8px">
-            <label class="radio-item"><input type="radio" name="dance"> ~20–30 mins of dancefloor then wrap</label>
-            <label class="radio-item"><input type="radio" name="dance"> First song only then wrap</label>
-            <label class="radio-item"><input type="radio" name="dance"> No dancefloor coverage needed</label>
-            <label class="radio-item"><input type="radio" name="dance"> As long as possible</label>
+        <div class="field span2"><label>Any specific late-night moment you want captured before I wrap?</label><textarea id="late_night" placeholder="e.g. sparkler exit at 10:30 PM, surprise performance at 9 PM..."></textarea></div>
+        <div class="field span2">
+          <label>Dancefloor coverage</label>
+          <div class="pills" id="p_dance">
+            <span class="pill" data-val="20-30 mins then wrap">20-30 mins then wrap</span>
+            <span class="pill" data-val="First song only then wrap">First song only then wrap</span>
+            <span class="pill" data-val="No dancefloor coverage needed">No dancefloor coverage needed</span>
+            <span class="pill" data-val="As long as possible">As long as possible</span>
           </div>
         </div>
-        <div class="field span-2">
-          <label>After-party (if applicable) - is coverage expected?</label>
-          <div class="radio-group" style="margin-top:8px">
-            <label class="radio-item"><input type="radio" name="afterparty"> No after-party</label>
-            <label class="radio-item"><input type="radio" name="afterparty"> After-party but no coverage needed</label>
-            <label class="radio-item"><input type="radio" name="afterparty"> Would love some after-party content - discuss separately</label>
+        <div class="field span2">
+          <label>After-party - is coverage expected?</label>
+          <div class="pills" id="p_afterparty">
+            <span class="pill" data-val="No after-party">No after-party</span>
+            <span class="pill" data-val="After-party but no coverage needed">After-party but no coverage needed</span>
+            <span class="pill" data-val="Would love after-party content - discuss separately">Would love after-party content - discuss separately</span>
           </div>
         </div>
       </div>
     </div>
 
     <div class="delivery-box">
-      <h4>Content usage &amp; permissions</h4>
-      <p>The following terms are agreed upon by both parties as a condition of this arrangement. Please take a moment to read these before signing off.</p>
-      <div class="terms-statement">
+      <h4>Content usage & permissions</h4>
+      <p>Please take a moment to read these before signing off.</p>
+      <div class="terms-box">
         <p><strong>Ruby's rights -</strong> Ruby may use any content captured on the day for portfolio and promotional purposes across her personal social media channels (Instagram and TikTok), website, and any future client pitches, with no time limit.</p>
         <p><strong>Posting timeline -</strong> Ruby will not post content to her own channels until the couple has received their delivered files. After delivery, Ruby is free to post at any time.</p>
         <p><strong>The couple's rights -</strong> The couple have full, unlimited rights to use, edit, re-edit, share, and post all delivered content - raw and edited - however they wish, forever, with no restrictions.</p>
-        <p><strong>Credit &amp; tagging -</strong> Where possible, the couple agree to tag Ruby when sharing content she has created. This is appreciated but not a hard requirement.</p>
+        <p><strong>Credit & tagging -</strong> Where possible, the couple agree to tag Ruby when sharing content she has created. This is appreciated but not a hard requirement.</p>
       </div>
-      <div class="fields-grid" style="margin-top:16px">
-        <div class="field span-2">
-          <label>Any specific content Ruby should NOT post (e.g. certain guests, intimate moments, venue restrictions)</label>
-          <textarea class="field-area" placeholder="Please flag anything here - Ruby will keep this confidential and respect all requests"></textarea>
-        </div>
+      <div class="grid one" style="margin-top:16px">
+        <div class="field"><label>Any specific content Ruby should NOT post (certain guests, intimate moments, venue restrictions)</label><textarea id="no_post" placeholder="Please flag anything here - Ruby will respect all requests"></textarea></div>
       </div>
     </div>
 
     <div class="delivery-box">
-      <h4>Financial &amp; travel arrangement</h4>
-      <div class="fields-grid">
-        <div class="field span-2">
-          <label>Agreed arrangement</label>
-          <textarea class="field-area" placeholder="e.g. flights, travel and accommodation covered by couple. Creator provides content in exchange for portfolio usage rights. No monetary fee applies."></textarea>
-        </div>
-        <div class="field span-2">
-          <label>Accommodation details (if the creator is staying overnight)</label>
-          <input class="field-line" type="text" placeholder="Hotel name, address, check-in date, check-out date">
-        </div>
-        <div class="field span-2">
-          <label>Will the creator be provided a meal at the reception?</label>
-          <div class="radio-group" style="margin-top:8px">
-            <label class="radio-item"><input type="radio" name="meal"> Yes - seated at vendor table</label>
-            <label class="radio-item"><input type="radio" name="meal"> Yes - vendor meal provided</label>
-            <label class="radio-item"><input type="radio" name="meal"> No - creator to arrange own food</label>
+      <h4>Financial & travel arrangement</h4>
+      <div class="grid">
+        <div class="field span2"><label>Agreed arrangement</label><textarea id="arrangement" placeholder="e.g. Flights, travel and accommodation covered by the couple. Ruby provides content in exchange for portfolio usage rights. No monetary fee applies."></textarea></div>
+        <div class="field span2"><label>Accommodation details (if staying overnight)</label><input type="text" id="accommodation" placeholder="Hotel name, address, check-in / check-out date"></div>
+        <div class="field span2">
+          <label>Will Ruby be provided a meal at the reception?</label>
+          <div class="pills" id="p_meal">
+            <span class="pill" data-val="Yes - seated at vendor table">Yes - seated at vendor table</span>
+            <span class="pill" data-val="Yes - vendor meal provided">Yes - vendor meal provided</span>
+            <span class="pill" data-val="No - Ruby to arrange own food">No - Ruby to arrange own food</span>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- SECTION 10: ADDITIONAL -->
+  <!-- S10 -->
   <div class="section">
-    <div class="section-header">
-      <div class="section-num">10</div>
-      <div class="section-title">Anything Else?</div>
-    </div>
-    <div class="fields-grid single">
-      <div class="field">
-        <label>Is there anything else I should know before the day?</label>
-        <textarea class="field-area" style="min-height:100px" placeholder="Special family dynamics, accessibility needs, timing sensitivities, anything at all - the more I know the better prepared I am"></textarea>
-      </div>
-      <div class="field">
-        <label>Do you have any questions for me before the day?</label>
-        <textarea class="field-area" placeholder="Don't be shy - no question is too small"></textarea>
-      </div>
+    <div class="section-hdr"><div class="sec-num">10</div><div class="sec-title">Anything else?</div></div>
+    <div class="grid one">
+      <div class="field"><label>Is there anything else I should know before the day?</label><textarea id="other" style="min-height:90px" placeholder="Special family dynamics, accessibility needs, timing sensitivities, anything at all - the more I know the better prepared I am"></textarea></div>
+      <div class="field"><label>Any questions for Ruby before the day?</label><textarea id="questions" placeholder="No question is too small"></textarea></div>
     </div>
   </div>
 
   <!-- SIGN OFF -->
   <div class="section">
-    <div class="section-header">
-      <div class="section-num">✦</div>
-      <div class="section-title">Agreement &amp; Sign-Off</div>
+    <div class="section-hdr"><div class="sec-num">✦</div><div class="sec-title">Agreement & sign-off</div></div>
+    <p style="font-size:13px;color:var(--ink-soft);line-height:1.75;margin-bottom:20px">By signing below, both parties confirm they've read through this brief and are happy with everything outlined. Ruby will be in touch to schedule a quick call 2-4 weeks before the wedding to lock in the final details.</p>
+    <div class="sig-grid">
+      <div class="sig-field"><div class="sig-line"></div><div class="sig-lbl">Bride / Partner 1 signature</div></div>
+      <div class="sig-field"><div class="sig-line"></div><div class="sig-lbl">Groom / Partner 2 signature</div></div>
+      <div class="sig-field"><div class="sig-line"></div><div class="sig-lbl">Date</div></div>
+      <div class="sig-field"><div class="sig-line"></div><div class="sig-lbl">Ruby's signature</div></div>
     </div>
-    <p style="font-size:13px; color:var(--ink-soft); margin-bottom:20px; line-height:1.7">By signing below, both parties confirm they've read through this brief and are happy with everything outlined. Ruby will be in touch to schedule a quick call 2-4 weeks before the wedding to lock in the final details.</p>
-    <div class="sig-block">
-      <div class="sig-field">
-        <div class="sig-line"></div>
-        <div class="sig-label">Bride / Partner 1 signature</div>
-      </div>
-      <div class="sig-field">
-        <div class="sig-line"></div>
-        <div class="sig-label">Groom / Partner 2 signature</div>
-      </div>
-      <div class="sig-field">
-        <div class="sig-line"></div>
-        <div class="sig-label">Date</div>
-      </div>
-      <div class="sig-field">
-        <div class="sig-line"></div>
-        <div class="sig-label">Content creator signature</div>
-      </div>
-    </div>
+    <button class="submit-btn" onclick="submitForm()" style="margin-top:28px">Submit brief</button>
   </div>
 
   <div class="doc-footer">
-    <div class="header-ornament" style="margin-bottom:16px">
-      <div class="header-ornament-line"></div>
-      <div class="header-ornament-dot"></div>
-      <div class="header-ornament-diamond"></div>
-      <div class="header-ornament-dot"></div>
-      <div class="header-ornament-line"></div>
-    </div>
+    <div class="ornament" style="margin-bottom:14px"><div class="orn-line"></div><div class="orn-dot"></div><div class="orn-diamond"></div><div class="orn-dot"></div><div class="orn-line"></div></div>
     Wedding Content Creator Brief &nbsp;·&nbsp; Confidential &nbsp;·&nbsp; Please retain a copy for your records
   </div>
 
 </div>
+</div>
+
+<!-- DASHBOARD VIEW -->
+<div id="view-dash" class="view">
+<div class="page">
+  <div class="dash-header">
+    <div>
+      <h2>Responses</h2>
+      <div class="dash-meta" id="dash-meta">No responses yet</div>
+    </div>
+  </div>
+  <div id="responses-list"></div>
+</div>
+</div>
 
 <script>
-  document.querySelectorAll('.check-item').forEach(item => {
-    item.addEventListener('click', () => {
-      item.classList.toggle('checked');
-      const cb = item.querySelector('input[type="checkbox"]');
-      if (cb) cb.checked = item.classList.contains('checked');
-    });
-  });
+document.addEventListener("DOMContentLoaded", function() {
+var STORAGE_KEY = 'ruby_wedding_briefs';
 
-  document.querySelectorAll('.radio-item').forEach(item => {
-    item.addEventListener('click', () => {
-      const name = item.querySelector('input[type="radio"]').name;
-      document.querySelectorAll(`.radio-item input[name="${name}"]`).forEach(r => {
-        r.closest('.radio-item').classList.remove('selected');
-      });
-      item.classList.add('selected');
-      item.querySelector('input[type="radio"]').checked = true;
+function show(v, el) {
+  document.querySelectorAll('.view').forEach(function(e){ e.classList.remove('active'); });
+  document.querySelectorAll('.nav-tab').forEach(function(e){ e.classList.remove('active'); });
+  document.getElementById('view-' + v).classList.add('active');
+  if (el) el.classList.add('active');
+  if (v === 'dash') renderDash();
+}
+
+// Checkboxes
+document.querySelectorAll('.check-item').forEach(function(el) {
+  el.addEventListener('click', function() { this.classList.toggle('on'); });
+});
+
+// Pills (radio)
+document.querySelectorAll('.pills').forEach(function(group) {
+  group.querySelectorAll('.pill').forEach(function(pill) {
+    pill.addEventListener('click', function() {
+      group.querySelectorAll('.pill').forEach(function(p){ p.classList.remove('on'); });
+      pill.classList.add('on');
     });
   });
+});
+
+function getChecked(containerId) {
+  var items = [];
+  document.querySelectorAll('#' + containerId + ' .check-item.on').forEach(function(el) {
+    items.push(el.textContent.trim());
+  });
+  return items;
+}
+
+function getPill(groupId) {
+  var el = document.querySelector('#' + groupId + ' .pill.on');
+  return el ? el.getAttribute('data-val') : '';
+}
+
+function val(id) {
+  var el = document.getElementById(id);
+  return el ? el.value.trim() : '';
+}
+
+function submitForm() {
+  var name1 = val('name1');
+  if (!name1) { alert('Please enter at least Partner 1\'s name before submitting.'); return; }
+
+  var data = {
+    id: Date.now(),
+    submitted: new Date().toLocaleDateString('en-AU', {day:'numeric',month:'long',year:'numeric'}),
+    basics: {
+      name1: name1, name2: val('name2'),
+      ig1: val('ig1'), ig2: val('ig2'), tt: val('tt'),
+      date: val('wdate'), contact: val('contact'),
+      emergency: val('emergency'), planner: val('planner')
+    },
+    venues: {
+      bride_loc: val('bride_loc'), bride_start: val('bride_start'), hmu: val('hmu'),
+      groom_loc: val('groom_loc'), groom_start: val('groom_start'),
+      access: getPill('p_access'), priority: val('priority'),
+      cer_venue: val('cer_venue'), cer_time: val('cer_time'), cer_dur: val('cer_dur'),
+      cer_restrict: val('cer_restrict'),
+      rec_venue: val('rec_venue'), rec_start: val('rec_start'), rec_end: val('rec_end')
+    },
+    timeline: { timeline: val('timeline'), arrive: val('arrive'), leave: val('leave') },
+    shots: { checked: getChecked('shots'), trends: val('trends'), other: val('other_shots') },
+    people: {
+      bridesmaids: val('bridesmaids'), groomsmen: val('groomsmen'),
+      bride_family: val('bride_family'), groom_family: val('groom_family'),
+      vips: val('vips'), no_film: val('no_film')
+    },
+    style: {
+      vibes: getChecked('vibes'), palette: val('palette'),
+      style: getPill('p_style'), inspo: val('inspo'), music: val('music')
+    },
+    vendors: {
+      photographer: val('photographer'), videographer: val('videographer'),
+      coordinator: val('coordinator'), dj: val('dj'), notes: val('vendor_notes')
+    },
+    traditions: { traditions: val('traditions'), surprises: val('surprises') },
+    delivery: {
+      cov_start: val('cov_start'), cov_location: val('cov_location'),
+      wrap: getPill('p_wrap'), wrap_time: val('wrap_time'),
+      milestone: getPill('p_milestone'), late_night: val('late_night'),
+      dance: getPill('p_dance'), afterparty: getPill('p_afterparty'),
+      no_post: val('no_post'),
+      arrangement: val('arrangement'), accommodation: val('accommodation'),
+      meal: getPill('p_meal')
+    },
+    extra: { other: val('other'), questions: val('questions') }
+  };
+
+  var stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+  stored.unshift(data);
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(stored));
+  updateBadge();
+
+  // Show success
+  document.querySelector('#view-form .page').innerHTML = '<div class="success" style="margin-top:40px"><div class="success-icon">✦</div><h3>Brief submitted</h3><p>Thank you! Ruby will be in touch shortly to confirm receipt and arrange your pre-wedding call.</p></div>';
+}
+
+function updateBadge() {
+  var stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+  var badge = document.getElementById('badge');
+  if (stored.length > 0) {
+    badge.style.display = 'inline-flex';
+    badge.textContent = stored.length;
+  } else {
+    badge.style.display = 'none';
+  }
+}
+
+function r(label, value) {
+  if (!value || (Array.isArray(value) && value.length === 0)) {
+    return '<div class="resp-row"><span class="resp-lbl">' + label + '</span><span class="resp-val empty">Not provided</span></div>';
+  }
+  if (Array.isArray(value)) {
+    var tags = value.map(function(v){ return '<span class="pill-tag">' + v + '</span>'; }).join('');
+    return '<div class="resp-row"><span class="resp-lbl">' + label + '</span><span class="resp-val"><div class="pills-display">' + tags + '</div></span></div>';
+  }
+  return '<div class="resp-row"><span class="resp-lbl">' + label + '</span><span class="resp-val">' + value + '</span></div>';
+}
+
+function renderDash() {
+  var stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+  var meta = document.getElementById('dash-meta');
+  var list = document.getElementById('responses-list');
+
+  if (stored.length === 0) {
+    meta.textContent = 'No responses yet';
+    list.innerHTML = '<div class="empty"><h3>No responses yet</h3><p>Once a couple submits their brief it will appear here.</p></div>';
+    return;
+  }
+
+  meta.textContent = stored.length + ' response' + (stored.length !== 1 ? 's' : '');
+
+  list.innerHTML = stored.map(function(d, i) {
+    var title = (d.basics.name1 || 'Unknown') + (d.basics.name2 ? ' & ' + d.basics.name2 : '');
+    return '<div class="resp-card" id="card' + i + '">' +
+      '<div class="resp-card-top" onclick="toggleCard(' + i + ')">' +
+        '<div class="resp-card-top-left">' +
+          '<h3>' + title + '</h3>' +
+          '<div class="meta">Submitted ' + d.submitted + (d.basics.date ? ' &nbsp;·&nbsp; Wedding ' + d.basics.date : '') + '</div>' +
+        '</div>' +
+        '<div class="resp-card-top-right">' +
+          '<button class="del-btn" onclick="deleteResp(event,' + i + ')">Delete</button>' +
+          '<span class="chevron">&#8964;</span>' +
+        '</div>' +
+      '</div>' +
+      '<div class="resp-body">' +
+
+        '<div class="resp-section"><div class="resp-section-title">The couple</div>' +
+          r('Partner 1', d.basics.name1) + r('Partner 2', d.basics.name2) +
+          r('Instagram (P1)', d.basics.ig1) + r('Instagram (P2)', d.basics.ig2) +
+          r('TikTok', d.basics.tt) + r('Wedding date', d.basics.date) +
+          r('Best contact', d.basics.contact) + r('Emergency contact', d.basics.emergency) +
+          r('Planner / coordinator', d.basics.planner) +
+        '</div>' +
+
+        '<div class="resp-section"><div class="resp-section-title">Venues & logistics</div>' +
+          r('Bride getting ready at', d.venues.bride_loc) + r('Bride start time', d.venues.bride_start) +
+          r('Hair & makeup done by', d.venues.hmu) + r('Groom getting ready at', d.venues.groom_loc) +
+          r('Groom start time', d.venues.groom_start) + r('Location access', d.venues.access) +
+          r('Prioritise', d.venues.priority) +
+          r('Ceremony venue', d.venues.cer_venue) + r('Ceremony time', d.venues.cer_time) +
+          r('Ceremony duration', d.venues.cer_dur) + r('Filming restrictions', d.venues.cer_restrict) +
+          r('Reception venue', d.venues.rec_venue) + r('Cocktail hour', d.venues.rec_start) +
+          r('Reception ends', d.venues.rec_end) +
+        '</div>' +
+
+        '<div class="resp-section"><div class="resp-section-title">Day timeline</div>' +
+          r('Full timeline', d.timeline.timeline) + r('Ruby arrives', d.timeline.arrive) +
+          r('Ruby leaves', d.timeline.leave) +
+        '</div>' +
+
+        '<div class="resp-section"><div class="resp-section-title">Shot list</div>' +
+          r('Must-have moments', d.shots.checked) + r('Trends / formats', d.shots.trends) +
+          r('Other must-haves / avoids', d.shots.other) +
+        '</div>' +
+
+        '<div class="resp-section"><div class="resp-section-title">Key people</div>' +
+          r('Bridesmaids', d.people.bridesmaids) + r('Groomsmen', d.people.groomsmen) +
+          r("Bride's family", d.people.bride_family) + r("Groom's family", d.people.groom_family) +
+          r('VIP guests', d.people.vips) + r('Do NOT film', d.people.no_film) +
+        '</div>' +
+
+        '<div class="resp-section"><div class="resp-section-title">Aesthetic & style</div>' +
+          r('Vibes', d.style.vibes) + r('Colour palette', d.style.palette) +
+          r('Content style', d.style.style) + r('Inspo accounts', d.style.inspo) +
+          r('Music taste', d.style.music) +
+        '</div>' +
+
+        '<div class="resp-section"><div class="resp-section-title">Vendors</div>' +
+          r('Photographer', d.vendors.photographer) + r('Videographer', d.vendors.videographer) +
+          r('Coordinator', d.vendors.coordinator) + r('DJ / MC / Band', d.vendors.dj) +
+          r('Vendor notes', d.vendors.notes) +
+        '</div>' +
+
+        '<div class="resp-section"><div class="resp-section-title">Traditions & surprises</div>' +
+          r('Traditions', d.traditions.traditions) + r('Surprises to know about', d.traditions.surprises) +
+        '</div>' +
+
+        '<div class="resp-section"><div class="resp-section-title">Coverage & delivery</div>' +
+          r('Coverage starts', d.delivery.cov_start) + r('Coverage location', d.delivery.cov_location) +
+          r('How coverage ends', d.delivery.wrap) + r('Fixed wrap time', d.delivery.wrap_time) +
+          r('Milestone moment', d.delivery.milestone) + r('Late-night moment', d.delivery.late_night) +
+          r('Dancefloor coverage', d.delivery.dance) + r('After-party', d.delivery.afterparty) +
+          r("Content Ruby should NOT post", d.delivery.no_post) +
+          r('Arrangement', d.delivery.arrangement) + r('Accommodation', d.delivery.accommodation) +
+          r('Meal at reception', d.delivery.meal) +
+        '</div>' +
+
+        '<div class="resp-section"><div class="resp-section-title">Additional notes</div>' +
+          r('Anything else', d.extra.other) + r('Questions for Ruby', d.extra.questions) +
+        '</div>' +
+
+      '</div></div>';
+  }).join('');
+}
+
+function toggleCard(i) {
+  document.getElementById('card' + i).classList.toggle('open');
+}
+
+function deleteResp(e, i) {
+  e.stopPropagation();
+  if (!confirm('Delete this response? This cannot be undone.')) return;
+  var stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+  stored.splice(i, 1);
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(stored));
+  updateBadge();
+  renderDash();
+}
+
+updateBadge();
+}); // end DOMContentLoaded
 </script>
-
 </body>
 </html>
