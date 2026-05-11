@@ -1,200 +1,1032 @@
-WEDDING CONTENT CREATION
-Pre-Wedding Client Brief
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedding Content Creator Brief</title>
 
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+  :root {
+    --cream: #FAF9F8;
+    --warm-white: #FFFFFF;
+    --ink: #252220;
+    --ink-soft: #524D4A;
+    --ink-muted: #9A9390;
+    --gold: #B8939A;
+    --gold-light: #E2D3D6;
+    --gold-xlight: #F8F3F4;
+    --border: rgba(180,148,154,0.2);
+    --border-light: rgba(180,148,154,0.1);
+    --section-bg: rgba(255,255,255,0.8);
+  }
 
+  body {
+    font-family: -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
 
+  .page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 48px 40px;
+  }
 
-To be completed by the couple at least 4 weeks before the wedding date
-A note from Ruby - I'm so honoured to be part of your day! This brief helps me plan every detail so nothing gets missed. The more you share, the better I can tailor the day to you. I'll follow up with any questions and we'll do a quick call to finalise the shot list before the big day. This document covers our full arrangement, content permissions, and all the logistics for the day.
-1
-The Couple & Basics
-FULL NAME - PARTNER 1
+  /* HEADER */
+  .header {
+    text-align: center;
+    padding: 36px 40px 36px;
+    margin-bottom: 40px;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    position: relative;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    border: 1px solid var(--border-light);
+    border-radius: 1px;
+    pointer-events: none;
+  }
+  .header-eyebrow {
+    font-family: -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-family: Didot, 'Bodoni MT', 'Playfair Display', 'Book Antiqua', Georgia, serif;
+    font-weight: 300;
+    font-size: 44px;
+    color: var(--ink);
+    line-height: 1.15;
+    margin-bottom: 4px;
+  }
+  .header h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+  .header-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 14px 0;
+  }
+  .header-ornament-line {
+    height: 1px;
+    width: 56px;
+    background: var(--border);
+  }
+  .header-ornament-diamond {
+    width: 5px;
+    height: 5px;
+    background: var(--gold);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
+  .header-ornament-dot {
+    width: 3px;
+    height: 3px;
+    background: var(--gold-light);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .header-sub {
+    font-size: 12px;
+    color: var(--ink-muted);
+    max-width: 420px;
+    margin: 0 auto;
+    letter-spacing: 0.03em;
+  }
 
-FULL NAME - PARTNER 2
+  /* INTRO NOTE */
+  .intro-note {
+    background: var(--gold-xlight);
+    border-left: 2px solid var(--gold);
+    padding: 16px 22px;
+    border-radius: 0 3px 3px 0;
+    margin-bottom: 44px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.75;
+  }
+  .intro-note strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
 
-INSTAGRAM HANDLE (PARTNER 1)
+  /* SECTIONS */
+  .section {
+    margin-bottom: 44px;
+    break-inside: avoid;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .section-num {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 1px solid var(--gold);
+    background: transparent;
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    letter-spacing: 0.02em;
+  }
+  .section-title {
+    font-family: Didot, 'Bodoni MT', 'Playfair Display', 'Book Antiqua', Georgia, serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--ink);
+    letter-spacing: 0.01em;
+  }
 
-INSTAGRAM HANDLE (PARTNER 2)
+  /* FIELDS */
+  .fields-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .fields-grid.single { grid-template-columns: 1fr; }
+  .fields-grid.triple { grid-template-columns: 1fr 1fr 1fr; }
 
-TIKTOK HANDLE (IF APPLICABLE)
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .field.span-2 { grid-column: span 2; }
+  .field.span-3 { grid-column: span 3; }
 
-WEDDING DATE
+  .field label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .field-line {
+    border: none;
+    border-bottom: 1px solid var(--border);
+    background: transparent;
+    padding: 6px 0;
+    font-family: -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    color: var(--ink);
+    width: 100%;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .field-line:focus { border-bottom-color: var(--gold); }
+  .field-line::placeholder { color: var(--ink-muted); font-style: italic; font-size: 12px; }
 
-BEST CONTACT (BRIDE / GROOM)
+  .field-area {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--warm-white);
+    padding: 10px 12px;
+    font-family: -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    color: var(--ink);
+    width: 100%;
+    outline: none;
+    resize: vertical;
+    min-height: 70px;
+    transition: border-color 0.2s;
+    line-height: 1.6;
+  }
+  .field-area:focus { border-color: var(--gold); }
+  .field-area::placeholder { color: var(--ink-muted); font-style: italic; font-size: 12px; }
 
-EMERGENCY CONTACT ON THE DAY
+  /* CHECKBOX GROUPS */
+  .check-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 4px;
+  }
+  .check-group.three { grid-template-columns: 1fr 1fr 1fr; }
+  .check-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--ink-soft);
+    padding: 6px 10px;
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    background: var(--warm-white);
+    transition: all 0.15s;
+    user-select: none;
+  }
+  .check-item:hover { border-color: var(--gold-light); }
+  .check-item input { display: none; }
+  .check-box {
+    width: 14px;
+    height: 14px;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    flex-shrink: 0;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s;
+  }
+  .check-item.checked .check-box {
+    background: var(--gold);
+    border-color: var(--gold);
+  }
+  .check-item.checked .check-box::after {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 5px;
+    border-left: 1.5px solid white;
+    border-bottom: 1.5px solid white;
+    transform: rotate(-45deg) translateY(-1px);
+  }
+  .check-item.checked { border-color: var(--gold-light); background: var(--gold-xlight); }
 
-WEDDING PLANNER / DAY-OF COORDINATOR (NAME + CONTACT)
+  /* RADIO GROUPS */
+  .radio-group {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+  }
+  .radio-item {
+    cursor: pointer;
+    font-size: 12px;
+    color: var(--ink-soft);
+    padding: 5px 14px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: var(--warm-white);
+    transition: all 0.15s;
+    user-select: none;
+  }
+  .radio-item input { display: none; }
+  .radio-item:hover { border-color: var(--gold-light); }
+  .radio-item.selected { background: var(--gold); border-color: var(--gold); color: white; font-weight: 500; }
 
-2
-Venues & Day Logistics
-Getting Ready
-WHERE WILL THE BRIDE / BRIDAL PARTY BE GETTING READY? (FULL ADDRESS)
+  /* DIVIDERS */
+  .sub-divider {
+    height: 1px;
+    background: var(--border-light);
+    margin: 20px 0;
+  }
 
-GETTING-READY START TIME (BRIDE)
+  .sub-label {
+    font-family: Didot, 'Bodoni MT', 'Playfair Display', 'Book Antiqua', Georgia, serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink-soft);
+    margin-bottom: 12px;
+    margin-top: 4px;
+    letter-spacing: 0.04em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .sub-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border-light);
+  }
 
-HAIR & MAKEUP FINISH TIME (APPROX)
+  /* DELIVERY SECTION */
+  .delivery-box {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 22px 26px;
+    margin-bottom: 14px;
+  }
+  .delivery-box h4 {
+    font-family: Didot, 'Bodoni MT', 'Playfair Display', 'Book Antiqua', Georgia, serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+    letter-spacing: 0.01em;
+  }
+  .delivery-box p {
+    font-size: 12px;
+    color: var(--ink-muted);
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
 
-WHERE WILL THE GROOM / GROOMSMEN BE GETTING READY? (FULL ADDRESS)
+  /* CREATOR NOTES PANEL */
+  .creator-note {
+    background: var(--gold-xlight);
+    border: 1px solid var(--border-light);
+    border-left: 2px solid var(--gold);
+    border-radius: 0 3px 3px 0;
+    padding: 14px 18px;
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+  .creator-note strong {
+    color: var(--gold);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 2px;
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
 
-GETTING-READY START TIME (GROOM)
+  /* SIGNATURE */
+  .sig-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 8px;
+  }
+  .sig-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .sig-line {
+    height: 48px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+  .sig-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-top: 6px;
+  }
 
-ARE BOTH LOCATIONS ACCESSIBLE TO ME SIMULTANEOUSLY?
-YES - SAME LOCATION
-CLOSE ENOUGH TO TRAVEL BETWEEN
-NO - PRIORITISE ONE
-IF I NEED TO CHOOSE ONE GETTING-READY LOCATION, WHICH SHOULD I PRIORITISE?
+  /* FOOTER */
+  .doc-footer {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    font-size: 11px;
+    color: var(--ink-muted);
+    letter-spacing: 0.05em;
+  }
 
+  /* PRINT */
+  /* TERMS LIST */
+  .terms-list { display: flex; flex-direction: column; gap: 0; margin-top: 4px; }
+  .term-row { display: flex; gap: 16px; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid var(--border-light); }
+  .term-row:last-child { border-bottom: none; }
+  .term-icon { font-family: "Cormorant Garamond", serif; font-size: 11px; color: var(--gold); letter-spacing: 0.08em; font-weight: 600; min-width: 22px; padding-top: 2px; }
+  .term-title { font-size: 13px; font-weight: 500; color: var(--ink); margin-bottom: 3px; }
+  .term-detail { font-size: 12px; color: var(--ink-soft); line-height: 1.65; }
+  .term-detail strong { color: var(--ink); font-weight: 500; }
+  .terms-statement { background: var(--gold-xlight); border: 1px solid var(--border-light); border-radius: 3px; padding: 16px 20px; font-size: 13px; color: var(--ink-soft); line-height: 1.75; }
+  .terms-statement p { margin-bottom: 10px; }
+  .terms-statement p:last-child { margin-bottom: 0; }
+  .terms-statement strong { color: var(--ink); font-weight: 500; }
 
-Ceremony
-CEREMONY VENUE NAME & FULL ADDRESS
+  @media print {
+    body { background: white; }
+    .page { padding: 24px 32px; }
+    .field-line, .field-area { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
 
-CEREMONY START TIME
+  @media (max-width: 600px) {
+    .page { padding: 24px 20px; }
+    .fields-grid { grid-template-columns: 1fr; }
+    .field.span-2 { grid-column: span 1; }
+    .fields-grid.triple { grid-template-columns: 1fr 1fr; }
+    .check-group { grid-template-columns: 1fr; }
+    .check-group.three { grid-template-columns: 1fr 1fr; }
+    .sig-block { grid-template-columns: 1fr; }
+    .header h1 { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
 
-ESTIMATED CEREMONY DURATION
+  <div class="header">
+    <div class="header-eyebrow">Wedding Content Creation</div>
+    <h1>Pre-Wedding <em>Client Brief</em></h1>
+    <div class="header-ornament">
+      <div class="header-ornament-line"></div>
+      <div class="header-ornament-dot"></div>
+      <div class="header-ornament-diamond"></div>
+      <div class="header-ornament-dot"></div>
+      <div class="header-ornament-line"></div>
+    </div>
+    <p class="header-sub">To be completed by the couple at least 4 weeks before the wedding date</p>
+  </div>
 
-ARE THERE ANY PHOTOGRAPHY/FILMING RESTRICTIONS DURING THE CEREMONY?
+  <div class="intro-note">
+    <strong>A note from Ruby -</strong> I'm so honoured to be part of your day! This brief helps me plan every detail so nothing gets missed. The more you share, the better I can tailor the day to you. I'll follow up with any questions and we'll do a quick call to finalise the shot list before the big day. This document covers our full arrangement, content permissions, and all the logistics for the day.
+  </div>
 
+  <!-- SECTION 1: COUPLE & BASICS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <div class="section-title">The Couple &amp; Basics</div>
+    </div>
+    <div class="fields-grid">
+      <div class="field">
+        <label>Full name - Partner 1</label>
+        <input class="field-line" type="text" placeholder="e.g. Sarah Johnson">
+      </div>
+      <div class="field">
+        <label>Full name - Partner 2</label>
+        <input class="field-line" type="text" placeholder="e.g. Sarah Johnson">
+      </div>
+      <div class="field">
+        <label>Instagram handle (Partner 1)</label>
+        <input class="field-line" type="text" placeholder="@handle">
+      </div>
+      <div class="field">
+        <label>Instagram handle (Partner 2)</label>
+        <input class="field-line" type="text" placeholder="@handle">
+      </div>
+      <div class="field">
+        <label>TikTok handle (if applicable)</label>
+        <input class="field-line" type="text" placeholder="@handle">
+      </div>
+      <div class="field">
+        <label>Wedding date</label>
+        <input class="field-line" type="text" placeholder="DD / MM / YYYY">
+      </div>
+      <div class="field">
+        <label>Best contact (Bride / Groom)</label>
+        <input class="field-line" type="text" placeholder="Name + mobile number">
+      </div>
+      <div class="field">
+        <label>Emergency contact on the day</label>
+        <input class="field-line" type="text" placeholder="Name + mobile - ideally a bridesmaid/groomsman">
+      </div>
+      <div class="field span-2">
+        <label>Wedding planner / day-of coordinator (name + contact)</label>
+        <input class="field-line" type="text" placeholder="Name, role, mobile number - leave blank if none">
+      </div>
+    </div>
+  </div>
 
-Reception
-RECEPTION VENUE NAME & FULL ADDRESS (IF DIFFERENT)
+  <!-- SECTION 2: VENUES & LOGISTICS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">2</div>
+      <div class="section-title">Venues &amp; Day Logistics</div>
+    </div>
 
-RECEPTION DOORS OPEN / COCKTAIL HOUR START
+    <div class="sub-label">Getting Ready</div>
+    <div class="fields-grid">
+      <div class="field span-2">
+        <label>Where will the bride / bridal party be getting ready? (full address)</label>
+        <input class="field-line" type="text" placeholder="Hotel name, room number, or address">
+      </div>
+      <div class="field">
+        <label>Getting-ready start time (bride)</label>
+        <input class="field-line" type="text" placeholder="e.g. 8:00 AM">
+      </div>
+      <div class="field">
+        <label>Hair &amp; makeup finish time (approx)</label>
+        <input class="field-line" type="text" placeholder="e.g. 12:30 PM">
+      </div>
+      <div class="field span-2">
+        <label>Where will the groom / groomsmen be getting ready? (full address)</label>
+        <input class="field-line" type="text" placeholder="Hotel name, room number, or address">
+      </div>
+      <div class="field">
+        <label>Getting-ready start time (groom)</label>
+        <input class="field-line" type="text" placeholder="e.g. 9:00 AM">
+      </div>
+      <div class="field">
+        <label>Are both locations accessible to me simultaneously?</label>
+        <div class="radio-group" style="margin-top:8px">
+          <label class="radio-item"><input type="radio" name="access"> Yes - same location</label>
+          <label class="radio-item"><input type="radio" name="access"> Close enough to travel between</label>
+          <label class="radio-item"><input type="radio" name="access"> No - prioritise one</label>
+        </div>
+      </div>
+      <div class="field span-2">
+        <label>If I need to choose one getting-ready location, which should I prioritise?</label>
+        <input class="field-line" type="text" placeholder="Bride / Groom / Equal - and why">
+      </div>
+    </div>
 
-RECEPTION END TIME / LAST SONG
+    <div class="sub-divider"></div>
+    <div class="sub-label">Ceremony</div>
+    <div class="fields-grid">
+      <div class="field span-2">
+        <label>Ceremony venue name &amp; full address</label>
+        <input class="field-line" type="text" placeholder="">
+      </div>
+      <div class="field">
+        <label>Ceremony start time</label>
+        <input class="field-line" type="text" placeholder="e.g. 2:00 PM">
+      </div>
+      <div class="field">
+        <label>Estimated ceremony duration</label>
+        <input class="field-line" type="text" placeholder="e.g. 30–45 minutes">
+      </div>
+      <div class="field span-2">
+        <label>Are there any photography/filming restrictions during the ceremony?</label>
+        <input class="field-area" placeholder="e.g. unplugged ceremony, no flash, specific areas off-limits, officiant rules…" rows="2"></input>
+      </div>
+    </div>
 
-3
-Full Day Timeline
-CREATOR'S NOTE
-Walk me through the day hour-by-hour. This is the single most useful thing you can give me - it means I can be in the right place at the right time without having to pull you aside and ask on the day.
+    <div class="sub-divider"></div>
+    <div class="sub-label">Reception</div>
+    <div class="fields-grid">
+      <div class="field span-2">
+        <label>Reception venue name &amp; full address (if different)</label>
+        <input class="field-line" type="text" placeholder="Leave blank if same as ceremony">
+      </div>
+      <div class="field">
+        <label>Reception doors open / cocktail hour start</label>
+        <input class="field-line" type="text" placeholder="e.g. 3:30 PM">
+      </div>
+      <div class="field">
+        <label>Reception end time / last song</label>
+        <input class="field-line" type="text" placeholder="e.g. 11:30 PM">
+      </div>
+    </div>
+  </div>
 
-WHAT TIME SHOULD I ARRIVE ON THE DAY?
+  <!-- SECTION 3: FULL DAY TIMELINE -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">3</div>
+      <div class="section-title">Full Day Timeline</div>
+    </div>
+    <div class="creator-note">
+      <strong>Creator's note</strong>
+      Walk me through the day hour-by-hour. This is the single most useful thing you can give me - it means I can be in the right place at the right time without having to pull you aside and ask on the day.
+    </div>
+    <div style="margin-top:14px">
+      <textarea class="field-area" style="min-height:200px" placeholder="Example format:
+8:00 AM - Bridal prep begins at The Versace Hotel, Room 412
+10:30 AM - Groom getting ready at own home
+12:00 PM - First look (garden of ceremony venue)
+1:00 PM - Couple portraits + bridal party photos
+2:00 PM - Guests arrive / ceremony begins
+2:45 PM - Ceremony ends, guests move to cocktail hour
+3:00 PM - Cocktail hour (outdoor terrace)
+4:30 PM - Grand entrance into reception
+5:00 PM - Speeches / toasts
+6:00 PM - First dance
+6:30 PM - Cake cutting
+7:00 PM - Open dance floor
+10:00 PM - Bouquet toss / special send-off
+11:00 PM - Night ends"></textarea>
+    </div>
+    <div class="fields-grid" style="margin-top:12px">
+      <div class="field">
+        <label>What time should I arrive on the day?</label>
+        <input class="field-line" type="text" placeholder="e.g. 7:45 AM at bridal prep location">
+      </div>
+      <div class="field">
+        <label>What time can I leave?</label>
+        <input class="field-line" type="text" placeholder="e.g. after bouquet toss, approx 10 PM">
+      </div>
+    </div>
+  </div>
 
-WHAT TIME CAN I LEAVE?
+  <!-- SECTION 4: MUST-HAVE MOMENTS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">4</div>
+      <div class="section-title">Must-Have Moments &amp; Shot List</div>
+    </div>
 
-4
-Must-Have Moments & Shot List
-Tick every moment you definitely want captured Dress hanging / flat lay Shoes, jewellery, details Bride putting on dress Veil / accessories being put on Bridesmaids getting ready Hair & makeup process Groom getting dressed Groomsmen helping / ties Champagne / getting-ready drinks Gift / letter exchange (bride & groom) First look reveal Parent / family reveal reactions Bridal party walking in Bride walking down the aisle Groom's reaction at altar Vow exchange Ring exchange close-up First kiss Walking back down the aisle Guest reactions & tears Confetti / petal exit Couple portraits (golden hour) Venue / decor detail shots Table settings & florals Cocktail hour candids Grand entrance into reception Speeches & toasts (reactions) First dance Parent dances Cake cutting Cake smash / faces Open dance floor energy Bouquet toss Special send-off / sparklers Photo booth / lawn games Guest interviews / messages to camera
-ANY SPECIFIC TRENDING REELS / TIKTOK FORMATS YOU WANT RECREATED?
-OTHER MUST-HAVE OR MUST-AVOID SHOTS (ANYTHING NOT COVERED ABOVE)
-5
-Key People & VIPs
-WHY THIS MATTERS
-Knowing who the important faces are means I can capture their reactions naturally, without interrupting the day to ask. List first names at minimum.
-BRIDESMAIDS (FIRST NAMES)
-GROOMSMEN / BRIDAL PARTY (FIRST NAMES)
-BRIDE'S PARENTS / FAMILY TO FEATURE
-GROOM'S PARENTS / FAMILY TO FEATURE
-ANY VIP GUESTS I SHOULD LOOK OUT FOR SPECIFICALLY (GRANDPARENTS, CLOSE FRIENDS ETC.)
-ANY GUESTS WHO SHOULD NOT BE FILMED OR PHOTOGRAPHED (PRIVACY / PERSONAL REASONS)
-6
-Aesthetic, Vibe & Style
-HOW WOULD YOU DESCRIBE THE OVERALL VIBE OF YOUR WEDDING?
-ROMANTIC & DREAMY ELEGANT & REFINED BOHO / OUTDOOR MODERN & EDITORIAL FUN & PARTY ENERGY INTIMATE & EMOTIONAL CULTURAL / TRADITIONAL LUXURY / GLAM RUSTIC / RELAXED
-WHAT IS YOUR WEDDING COLOUR PALETTE?
+    <div class="sub-label">Tick every moment you definitely want captured</div>
+    <div class="check-group three" id="shotlist">
+      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Dress hanging / flat lay</label>
+      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Shoes, jewellery, details</label>
+      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Bride putting on dress</label>
+      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Veil / accessories being put on</label>
+      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Bridesmaids getting ready</label>
+      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Hair &amp; makeup process</label>
+      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Groom getting dressed</label>
+      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Groomsmen helping / ties</label>
+      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Champagne / getting-ready drinks</label>
+      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Gift / letter exchange (bride &amp; groom)</label>
+      <label class="check-item"><input type="checkbox"><span class="check-box"></span>First look reveal</label>
+      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Parent / family reveal reactions</label>
+      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Bridal party walking in</label>
+      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Bride walking down the aisle</label>
+      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Groom's reaction at altar</label>
+      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Vow exchange</label>
+      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Ring exchange close-up</label>
+      <label class="check-item"><input type="checkbox"><span class="check-box"></span>First kiss</label>
+      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Walking back down the aisle</label>
+      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Guest reactions &amp; tears</label>
+      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Confetti / petal exit</label>
+      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Couple portraits (golden hour)</label>
+      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Venue / decor detail shots</label>
+      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Table settings &amp; florals</label>
+      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Cocktail hour candids</label>
+      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Grand entrance into reception</label>
+      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Speeches &amp; toasts (reactions)</label>
+      <label class="check-item"><input type="checkbox"><span class="check-box"></span>First dance</label>
+      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Parent dances</label>
+      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Cake cutting</label>
+      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Cake smash / faces</label>
+      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Open dance floor energy</label>
+      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Bouquet toss</label>
+      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Special send-off / sparklers</label>
+      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Photo booth / lawn games</label>
+      <label class="check-item"><input type="checkbox"><span class="check-box"></span>Guest interviews / messages to camera</label>
+    </div>
 
-CONTENT STYLE PREFERENCE
-WARM & GOLDEN TONES
-BRIGHT & AIRY
-MOODY & CINEMATIC
-TRUE-TO-LIFE / NATURAL
-NO PREFERENCE
-INSPIRATION REELS / CONTENT CREATOR ACCOUNTS YOU LOVE (DROP LINKS OR @HANDLES)
-MUSIC TASTE FOR ANY EDITED REELS (GENRES, ARTISTS, OR SPECIFIC SONGS YOU LOVE)
-7
-Vendor Team
-WHY I NEED THIS
-I'll be working alongside your photographer and other vendors on the day, so knowing who's who helps me coordinate seamlessly - ensuring we all give each other the space to capture every moment perfectly.
-PHOTOGRAPHER (NAME + CONTACT)
+    <div style="margin-top:16px">
+      <div class="field">
+        <label>Any specific trending reels / TikTok formats you want recreated?</label>
+        <textarea class="field-area" placeholder="e.g. 'Who is she?' bridal reveal, POV walking into reception, vow whisper trend, 'get ready with me' reel… drop links to any inspo videos"></textarea>
+      </div>
+    </div>
+    <div style="margin-top:12px">
+      <div class="field">
+        <label>Other must-have or must-avoid shots (anything not covered above)</label>
+        <textarea class="field-area" placeholder="e.g. 'Must get footage of my late grandmother's locket', 'Please avoid close-ups of Aunt Carol', 'Want the ring box detail', etc."></textarea>
+      </div>
+    </div>
+  </div>
 
-VIDEOGRAPHER (NAME + CONTACT)
+  <!-- SECTION 5: PEOPLE & VIPs -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">5</div>
+      <div class="section-title">Key People &amp; VIPs</div>
+    </div>
+    <div class="creator-note">
+      <strong>Why this matters</strong>
+      Knowing who the important faces are means I can capture their reactions naturally, without interrupting the day to ask. List first names at minimum.
+    </div>
+    <div class="fields-grid" style="margin-top:14px">
+      <div class="field">
+        <label>Bridesmaids (first names)</label>
+        <textarea class="field-area" placeholder="e.g. Mia, Sophie, Claire, Jess"></textarea>
+      </div>
+      <div class="field">
+        <label>Groomsmen / bridal party (first names)</label>
+        <textarea class="field-area" placeholder="e.g. Liam, Jake, Tom, Will"></textarea>
+      </div>
+      <div class="field">
+        <label>Bride's parents / family to feature</label>
+        <textarea class="field-area" placeholder="Names and relationship (e.g. Mum – Sandra, Dad – Greg)"></textarea>
+      </div>
+      <div class="field">
+        <label>Groom's parents / family to feature</label>
+        <textarea class="field-area" placeholder="Names and relationship"></textarea>
+      </div>
+      <div class="field span-2">
+        <label>Any VIP guests I should look out for specifically (grandparents, close friends etc.)</label>
+        <textarea class="field-area" placeholder="e.g. 'My 90-year-old nan Margaret - would love to capture her at the ceremony', 'Best friends who flew from overseas'"></textarea>
+      </div>
+      <div class="field span-2">
+        <label>Any guests who should NOT be filmed or photographed (privacy / personal reasons)</label>
+        <textarea class="field-area" placeholder="Names or descriptions - I will keep this completely confidential"></textarea>
+      </div>
+    </div>
+  </div>
 
-WEDDING PLANNER / COORDINATOR
+  <!-- SECTION 6: AESTHETIC & STYLE -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">6</div>
+      <div class="section-title">Aesthetic, Vibe &amp; Style</div>
+    </div>
+    <div class="fields-grid">
+      <div class="field span-2">
+        <label>How would you describe the overall vibe of your wedding?</label>
+        <div class="check-group three" id="vibes">
+          <label class="check-item"><input type="checkbox"><span class="check-box"></span>Romantic &amp; dreamy</label>
+          <label class="check-item"><input type="checkbox"><span class="check-box"></span>Elegant &amp; refined</label>
+          <label class="check-item"><input type="checkbox"><span class="check-box"></span>Boho / outdoor</label>
+          <label class="check-item"><input type="checkbox"><span class="check-box"></span>Modern &amp; editorial</label>
+          <label class="check-item"><input type="checkbox"><span class="check-box"></span>Fun &amp; party energy</label>
+          <label class="check-item"><input type="checkbox"><span class="check-box"></span>Intimate &amp; emotional</label>
+          <label class="check-item"><input type="checkbox"><span class="check-box"></span>Cultural / traditional</label>
+          <label class="check-item"><input type="checkbox"><span class="check-box"></span>Luxury / glam</label>
+          <label class="check-item"><input type="checkbox"><span class="check-box"></span>Rustic / relaxed</label>
+        </div>
+      </div>
+      <div class="field span-2">
+        <label>What is your wedding colour palette?</label>
+        <input class="field-line" type="text" placeholder="e.g. dusty rose, sage green, champagne gold">
+      </div>
+      <div class="field span-2">
+        <label>Content style preference</label>
+        <div class="radio-group" style="margin-top:8px">
+          <label class="radio-item"><input type="radio" name="style"> Warm &amp; golden tones</label>
+          <label class="radio-item"><input type="radio" name="style"> Bright &amp; airy</label>
+          <label class="radio-item"><input type="radio" name="style"> Moody &amp; cinematic</label>
+          <label class="radio-item"><input type="radio" name="style"> True-to-life / natural</label>
+          <label class="radio-item"><input type="radio" name="style"> No preference</label>
+        </div>
+      </div>
+      <div class="field span-2">
+        <label>Inspiration reels / content creator accounts you love (drop links or @handles)</label>
+        <textarea class="field-area" placeholder="Even a few TikTok or Instagram accounts whose editing style resonates with you is super helpful"></textarea>
+      </div>
+      <div class="field span-2">
+        <label>Music taste for any edited reels (genres, artists, or specific songs you love)</label>
+        <textarea class="field-area" placeholder="e.g. 'emotional ballads for ceremony clips', 'pop hits for the reception reel', 'our song is…'"></textarea>
+      </div>
+    </div>
+  </div>
 
-MC / DJ / BAND NAME
+  <!-- SECTION 7: VENDORS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">7</div>
+      <div class="section-title">Vendor Team</div>
+    </div>
+    <div class="creator-note">
+      <strong>Why I need this</strong>
+      I'll be working alongside your photographer and other vendors on the day, so knowing who's who helps me coordinate seamlessly - ensuring we all give each other the space to capture every moment perfectly.
+    </div>
+    <div class="fields-grid" style="margin-top:14px">
+      <div class="field">
+        <label>Photographer (name + contact)</label>
+        <input class="field-line" type="text" placeholder="">
+      </div>
+      <div class="field">
+        <label>Videographer (name + contact)</label>
+        <input class="field-line" type="text" placeholder="If applicable">
+      </div>
+      <div class="field">
+        <label>Wedding planner / coordinator</label>
+        <input class="field-line" type="text" placeholder="">
+      </div>
+      <div class="field">
+        <label>MC / DJ / Band name</label>
+        <input class="field-line" type="text" placeholder="">
+      </div>
+      <div class="field span-2">
+        <label>Are there any vendor restrictions or sensitivities I should be aware of?</label>
+        <input class="field-area" placeholder="e.g. photographer prefers content creators to stay off to the side during portraits, DJ restrictions on filming equipment on the dancefloor"></input>
+      </div>
+    </div>
+  </div>
 
-ARE THERE ANY VENDOR RESTRICTIONS OR SENSITIVITIES I SHOULD BE AWARE OF?
+  <!-- SECTION 8: CULTURAL / RELIGIOUS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">8</div>
+      <div class="section-title">Cultural, Religious &amp; Special Traditions</div>
+    </div>
+    <div class="fields-grid">
+      <div class="field span-2">
+        <label>Are there any cultural or religious traditions I should know about before the day?</label>
+        <textarea class="field-area" placeholder="e.g. tea ceremony, henna ritual, hora dance, unity candle, handfasting, specific order of events that differs from a typical western wedding"></textarea>
+      </div>
+      <div class="field span-2">
+        <label>Are there any surprises planned (for each other or for guests) that I should be aware of and NOT spoil?</label>
+        <textarea class="field-area" placeholder="e.g. surprise performance, hidden letter reveal, special moment you want captured but kept secret until it happens"></textarea>
+      </div>
+    </div>
+  </div>
 
-8
-Cultural, Religious & Special Traditions
-ARE THERE ANY CULTURAL OR RELIGIOUS TRADITIONS I SHOULD KNOW ABOUT BEFORE THE DAY?
-ARE THERE ANY SURPRISES PLANNED (FOR EACH OTHER OR FOR GUESTS) THAT I SHOULD BE AWARE OF AND NOT SPOIL?
-9
-Content Deliverables & Arrangement
-What you will receive
-The following deliverables are confirmed as part of this arrangement and are not subject to change.
-01
-Full raw content gallery
-All photos and videos captured throughout the day, sorted to remove duplicates and anything blurry, then organised by moment (getting ready · ceremony · portraits · reception), and delivered via Google Drive within 24 hours of the event.
-02
-1 hero highlight reel
-A 60–120 second vertical edit covering the full day, music-synced and ready to post to Instagram Reels or TikTok. Delivered within 5–7 days of the event.
-03
-Up to 3 short-form clips
-Up to 3 individual 15–30 second vertical clips, each optimised for social media. You're welcome to suggest specific moments you'd love edited - or leave it entirely to Ruby and let the content speak for itself. Delivered within 5–7 days of the event.
-COVERAGE START TIME
+  <!-- SECTION 9: DELIVERABLES -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">9</div>
+      <div class="section-title">Content Deliverables &amp; Arrangement</div>
+    </div>
 
-COVERAGE START LOCATION
+    <div class="delivery-box">
+      <h4>What you will receive</h4>
+      <p>The following deliverables are confirmed as part of this arrangement and are not subject to change.</p>
+      <div class="terms-list">
+        <div class="term-row">
+          <div class="term-icon">01</div>
+          <div class="term-body">
+            <div class="term-title">Full raw content gallery</div>
+            <div class="term-detail">All photos and videos captured throughout the day, sorted to remove duplicates and anything blurry, then organised by moment (getting ready · ceremony · portraits · reception), and delivered via Google Drive within <strong>24 hours</strong> of the event.</div>
+          </div>
+        </div>
+        <div class="term-row">
+          <div class="term-icon">02</div>
+          <div class="term-body">
+            <div class="term-title">1 hero highlight reel</div>
+            <div class="term-detail">A 60–120 second vertical edit covering the full day, music-synced and ready to post to Instagram Reels or TikTok. Delivered within <strong>5–7 days</strong> of the event.</div>
+          </div>
+        </div>
+        <div class="term-row">
+          <div class="term-icon">03</div>
+          <div class="term-body">
+            <div class="term-title">Up to 3 short-form clips</div>
+            <div class="term-detail">Up to 3 individual 15–30 second vertical clips, each optimised for social media. You're welcome to suggest specific moments you'd love edited - or leave it entirely to Ruby and let the content speak for itself. Delivered within <strong>5–7 days</strong> of the event.</div>
+          </div>
+        </div>
+      </div>
+      <div class="fields-grid" style="margin-top:20px">
+        <div class="field">
+          <label>Coverage start time</label>
+          <input class="field-line" type="text" placeholder="e.g. 8:00 AM - bridal prep">
+        </div>
+        <div class="field">
+          <label>Coverage start location</label>
+          <input class="field-line" type="text" placeholder="e.g. bridal suite, The Grand Hotel">
+        </div>
+      </div>
+    </div>
 
-Reception coverage & wrap time
-Late-night content quality drops significantly once the dancefloor opens and lighting dims. To protect turnaround time and content quality, we agree a clear wrap point in advance.
-HOW SHOULD COVERAGE END?
-FIXED TIME (I LEAVE AT AN AGREED HOUR)
-MILESTONE MOMENT (I LEAVE AFTER A SPECIFIC EVENT)
-BOTH - WHICHEVER COMES FIRST
-FIXED WRAP TIME (IF APPLICABLE)
+    <div class="delivery-box">
+      <h4>Reception coverage &amp; wrap time</h4>
+      <p>Late-night content quality drops significantly once the dancefloor opens and lighting dims. To protect turnaround time and content quality, we agree a clear wrap point in advance.</p>
+      <div class="fields-grid">
+        <div class="field span-2">
+          <label>How should coverage end?</label>
+          <div class="radio-group" style="margin-top:8px">
+            <label class="radio-item"><input type="radio" name="wrap"> Fixed time (I leave at an agreed hour)</label>
+            <label class="radio-item"><input type="radio" name="wrap"> Milestone moment (I leave after a specific event)</label>
+            <label class="radio-item"><input type="radio" name="wrap"> Both - whichever comes first</label>
+          </div>
+        </div>
+        <div class="field">
+          <label>Fixed wrap time (if applicable)</label>
+          <input class="field-line" type="text" placeholder="e.g. 10:00 PM">
+        </div>
+        <div class="field">
+          <label>Milestone wrap moment (if applicable)</label>
+          <div class="radio-group" style="margin-top:8px">
+            <label class="radio-item"><input type="radio" name="milestone"> After first dance</label>
+            <label class="radio-item"><input type="radio" name="milestone"> After cake cutting</label>
+            <label class="radio-item"><input type="radio" name="milestone"> After bouquet toss</label>
+            <label class="radio-item"><input type="radio" name="milestone"> After send-off / exit</label>
+            <label class="radio-item"><input type="radio" name="milestone"> Other (specify below)</label>
+          </div>
+        </div>
+        <div class="field span-2">
+          <label>Is there a specific late-night moment you absolutely want captured before I wrap?</label>
+          <input class="field-area" placeholder="e.g. surprise performance at 9 PM, sparkler exit at 10:30 PM, last song dedication - if so I'll stay specifically for this then wrap immediately after"></input>
+        </div>
+        <div class="field span-2">
+          <label>Open dancefloor coverage</label>
+          <div class="radio-group" style="margin-top:8px">
+            <label class="radio-item"><input type="radio" name="dance"> ~20–30 mins of dancefloor then wrap</label>
+            <label class="radio-item"><input type="radio" name="dance"> First song only then wrap</label>
+            <label class="radio-item"><input type="radio" name="dance"> No dancefloor coverage needed</label>
+            <label class="radio-item"><input type="radio" name="dance"> As long as possible</label>
+          </div>
+        </div>
+        <div class="field span-2">
+          <label>After-party (if applicable) - is coverage expected?</label>
+          <div class="radio-group" style="margin-top:8px">
+            <label class="radio-item"><input type="radio" name="afterparty"> No after-party</label>
+            <label class="radio-item"><input type="radio" name="afterparty"> After-party but no coverage needed</label>
+            <label class="radio-item"><input type="radio" name="afterparty"> Would love some after-party content - discuss separately</label>
+          </div>
+        </div>
+      </div>
+    </div>
 
-MILESTONE WRAP MOMENT (IF APPLICABLE)
-AFTER FIRST DANCE
-AFTER CAKE CUTTING
-AFTER BOUQUET TOSS
-AFTER SEND-OFF / EXIT
-OTHER (SPECIFY BELOW)
-IS THERE A SPECIFIC LATE-NIGHT MOMENT YOU ABSOLUTELY WANT CAPTURED BEFORE I WRAP?
+    <div class="delivery-box">
+      <h4>Content usage &amp; permissions</h4>
+      <p>The following terms are agreed upon by both parties as a condition of this arrangement. Please take a moment to read these before signing off.</p>
+      <div class="terms-statement">
+        <p><strong>Ruby's rights -</strong> Ruby may use any content captured on the day for portfolio and promotional purposes across her personal social media channels (Instagram and TikTok), website, and any future client pitches, with no time limit.</p>
+        <p><strong>Posting timeline -</strong> Ruby will not post content to her own channels until the couple has received their delivered files. After delivery, Ruby is free to post at any time.</p>
+        <p><strong>The couple's rights -</strong> The couple have full, unlimited rights to use, edit, re-edit, share, and post all delivered content - raw and edited - however they wish, forever, with no restrictions.</p>
+        <p><strong>Credit &amp; tagging -</strong> Where possible, the couple agree to tag Ruby when sharing content she has created. This is appreciated but not a hard requirement.</p>
+      </div>
+      <div class="fields-grid" style="margin-top:16px">
+        <div class="field span-2">
+          <label>Any specific content Ruby should NOT post (e.g. certain guests, intimate moments, venue restrictions)</label>
+          <textarea class="field-area" placeholder="Please flag anything here - Ruby will keep this confidential and respect all requests"></textarea>
+        </div>
+      </div>
+    </div>
 
-OPEN DANCEFLOOR COVERAGE
-~20–30 MINS OF DANCEFLOOR THEN WRAP
-FIRST SONG ONLY THEN WRAP
-NO DANCEFLOOR COVERAGE NEEDED
-AS LONG AS POSSIBLE
-AFTER-PARTY (IF APPLICABLE) - IS COVERAGE EXPECTED?
-NO AFTER-PARTY
-AFTER-PARTY BUT NO COVERAGE NEEDED
-WOULD LOVE SOME AFTER-PARTY CONTENT - DISCUSS SEPARATELY
-Content usage & permissions
-The following terms are agreed upon by both parties as a condition of this arrangement. Please take a moment to read these before signing off.
-Ruby's rights - Ruby may use any content captured on the day for portfolio and promotional purposes across her personal social media channels (Instagram and TikTok), website, and any future client pitches, with no time limit.
-Posting timeline - Ruby will not post content to her own channels until the couple has received their delivered files. After delivery, Ruby is free to post at any time.
-The couple's rights - The couple have full, unlimited rights to use, edit, re-edit, share, and post all delivered content - raw and edited - however they wish, forever, with no restrictions.
-Credit & tagging - Where possible, the couple agree to tag Ruby when sharing content she has created. This is appreciated but not a hard requirement.
-ANY SPECIFIC CONTENT RUBY SHOULD NOT POST (E.G. CERTAIN GUESTS, INTIMATE MOMENTS, VENUE RESTRICTIONS)
-Financial & travel arrangement
-AGREED ARRANGEMENT
-ACCOMMODATION DETAILS (IF THE CREATOR IS STAYING OVERNIGHT)
+    <div class="delivery-box">
+      <h4>Financial &amp; travel arrangement</h4>
+      <div class="fields-grid">
+        <div class="field span-2">
+          <label>Agreed arrangement</label>
+          <textarea class="field-area" placeholder="e.g. flights, travel and accommodation covered by couple. Creator provides content in exchange for portfolio usage rights. No monetary fee applies."></textarea>
+        </div>
+        <div class="field span-2">
+          <label>Accommodation details (if the creator is staying overnight)</label>
+          <input class="field-line" type="text" placeholder="Hotel name, address, check-in date, check-out date">
+        </div>
+        <div class="field span-2">
+          <label>Will the creator be provided a meal at the reception?</label>
+          <div class="radio-group" style="margin-top:8px">
+            <label class="radio-item"><input type="radio" name="meal"> Yes - seated at vendor table</label>
+            <label class="radio-item"><input type="radio" name="meal"> Yes - vendor meal provided</label>
+            <label class="radio-item"><input type="radio" name="meal"> No - creator to arrange own food</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-WILL THE CREATOR BE PROVIDED A MEAL AT THE RECEPTION?
-YES - SEATED AT VENDOR TABLE
-YES - VENDOR MEAL PROVIDED
-NO - CREATOR TO ARRANGE OWN FOOD
-10
-Anything Else?
-IS THERE ANYTHING ELSE I SHOULD KNOW BEFORE THE DAY?
-DO YOU HAVE ANY QUESTIONS FOR ME BEFORE THE DAY?
-✦
-Agreement & Sign-Off
-By signing below, both parties confirm they've read through this brief and are happy with everything outlined. Ruby will be in touch to schedule a quick call 2-4 weeks before the wedding to lock in the final details.
+  <!-- SECTION 10: ADDITIONAL -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">10</div>
+      <div class="section-title">Anything Else?</div>
+    </div>
+    <div class="fields-grid single">
+      <div class="field">
+        <label>Is there anything else I should know before the day?</label>
+        <textarea class="field-area" style="min-height:100px" placeholder="Special family dynamics, accessibility needs, timing sensitivities, anything at all - the more I know the better prepared I am"></textarea>
+      </div>
+      <div class="field">
+        <label>Do you have any questions for me before the day?</label>
+        <textarea class="field-area" placeholder="Don't be shy - no question is too small"></textarea>
+      </div>
+    </div>
+  </div>
 
-BRIDE / PARTNER 1 SIGNATURE
+  <!-- SIGN OFF -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">✦</div>
+      <div class="section-title">Agreement &amp; Sign-Off</div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft); margin-bottom:20px; line-height:1.7">By signing below, both parties confirm they've read through this brief and are happy with everything outlined. Ruby will be in touch to schedule a quick call 2-4 weeks before the wedding to lock in the final details.</p>
+    <div class="sig-block">
+      <div class="sig-field">
+        <div class="sig-line"></div>
+        <div class="sig-label">Bride / Partner 1 signature</div>
+      </div>
+      <div class="sig-field">
+        <div class="sig-line"></div>
+        <div class="sig-label">Groom / Partner 2 signature</div>
+      </div>
+      <div class="sig-field">
+        <div class="sig-line"></div>
+        <div class="sig-label">Date</div>
+      </div>
+      <div class="sig-field">
+        <div class="sig-line"></div>
+        <div class="sig-label">Content creator signature</div>
+      </div>
+    </div>
+  </div>
 
-GROOM / PARTNER 2 SIGNATURE
+  <div class="doc-footer">
+    <div class="header-ornament" style="margin-bottom:16px">
+      <div class="header-ornament-line"></div>
+      <div class="header-ornament-dot"></div>
+      <div class="header-ornament-diamond"></div>
+      <div class="header-ornament-dot"></div>
+      <div class="header-ornament-line"></div>
+    </div>
+    Wedding Content Creator Brief &nbsp;·&nbsp; Confidential &nbsp;·&nbsp; Please retain a copy for your records
+  </div>
 
-DATE
+</div>
 
-CONTENT CREATOR SIGNATURE
+<script>
+  document.querySelectorAll('.check-item').forEach(item => {
+    item.addEventListener('click', () => {
+      item.classList.toggle('checked');
+      const cb = item.querySelector('input[type="checkbox"]');
+      if (cb) cb.checked = item.classList.contains('checked');
+    });
+  });
 
+  document.querySelectorAll('.radio-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const name = item.querySelector('input[type="radio"]').name;
+      document.querySelectorAll(`.radio-item input[name="${name}"]`).forEach(r => {
+        r.closest('.radio-item').classList.remove('selected');
+      });
+      item.classList.add('selected');
+      item.querySelector('input[type="radio"]').checked = true;
+    });
+  });
+</script>
 
-
-
-
-Wedding Content Creator Brief  ·  Confidential  ·  Please retain a copy for your records
+</body>
+</html>
